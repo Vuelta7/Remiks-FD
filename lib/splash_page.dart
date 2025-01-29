@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:remiksweb/home_main.dart';
+import 'package:remiksweb/home/home_main.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -71,20 +71,26 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 238, 32, 35),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Stack(
+          alignment: Alignment.center,
           children: [
             FadeTransition(
               opacity: _logoAnimation,
-              child: Image.asset('assets/remiks_logo.png', width: 300),
+              child: ColorFiltered(
+                colorFilter: ColorFilter.mode(
+                  Colors.white,
+                  BlendMode.srcIn,
+                ),
+                child: Image.asset('assets/remiks_logo.png', width: 150),
+              ),
             ),
-            const SizedBox(height: 50),
             FadeTransition(
               opacity: _logoAnimation,
               child: SizedBox(
-                width: 500,
-                height: 500,
+                width: 600,
+                height: 600,
                 child: Center(
                   child: Stack(
                     children: _products.asMap().entries.map((entry) {
@@ -97,12 +103,12 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
                         builder: (context, child) {
                           return Transform.translate(
                             offset: Offset(
-                              120 *
+                              160 *
                                   cos(angle +
                                       _loadingAnimation.value *
                                           2 *
                                           3.141592653589793),
-                              120 *
+                              160 *
                                   sin(angle +
                                       _loadingAnimation.value *
                                           2 *
@@ -111,10 +117,20 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
                             child: child,
                           );
                         },
-                        child: Image.asset(
-                          product,
-                          width: 100,
-                          height: 100,
+                        child: Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            Icon(
+                              Icons.hexagon_rounded,
+                              size: 140,
+                              color: Colors.white,
+                            ),
+                            Image.asset(
+                              product,
+                              width: 100,
+                              height: 100,
+                            ),
+                          ],
                         ),
                       );
                     }).toList(),
