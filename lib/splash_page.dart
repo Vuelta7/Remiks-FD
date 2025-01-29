@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:animations/animations.dart'; // Add this line
 import 'package:flutter/material.dart';
 import 'package:remiksweb/home/home_main.dart';
 
@@ -53,8 +54,10 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
     _loadingController.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
         Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) => HomeMain(),
+          MaterialPageRoute<void>(
+            builder: (BuildContext context) {
+              return const OpenContainerTransformDemo();
+            },
           ),
         );
       }
@@ -71,20 +74,13 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 238, 32, 35),
       body: Center(
         child: Stack(
           alignment: Alignment.center,
           children: [
             FadeTransition(
               opacity: _logoAnimation,
-              child: ColorFiltered(
-                colorFilter: ColorFilter.mode(
-                  Colors.white,
-                  BlendMode.srcIn,
-                ),
-                child: Image.asset('assets/remiks_logo.png', width: 150),
-              ),
+              child: Image.asset('assets/remiks_logo.png', width: 150),
             ),
             FadeTransition(
               opacity: _logoAnimation,
@@ -123,7 +119,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
                             Icon(
                               Icons.hexagon_rounded,
                               size: 140,
-                              color: Colors.white,
+                              color: Color.fromARGB(255, 238, 32, 35),
                             ),
                             Image.asset(
                               product,
@@ -141,6 +137,26 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
           ],
         ),
       ),
+    );
+  }
+}
+
+class OpenContainerTransformDemo extends StatelessWidget {
+  const OpenContainerTransformDemo({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return OpenContainer(
+      transitionType: ContainerTransitionType.fade,
+      openBuilder: (BuildContext context, VoidCallback _) {
+        return const HomeMain();
+      },
+      closedBuilder: (BuildContext context, VoidCallback openContainer) {
+        return const SizedBox.shrink();
+      },
+      closedElevation: 0.0,
+      closedShape: const RoundedRectangleBorder(),
+      closedColor: Colors.transparent,
     );
   }
 }
