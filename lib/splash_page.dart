@@ -1,8 +1,7 @@
 import 'dart:math';
 
-import 'package:animations/animations.dart'; // Add this line
 import 'package:flutter/material.dart';
-import 'package:remiksweb/home/home_main.dart';
+import 'package:remiksweb/utils.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -53,13 +52,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
 
     _loadingController.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        Navigator.of(context).push(
-          MaterialPageRoute<void>(
-            builder: (BuildContext context) {
-              return const OpenContainerTransformDemo();
-            },
-          ),
-        );
+        Navigator.pushNamed(context, '/home');
       }
     });
   }
@@ -119,7 +112,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
                             Icon(
                               Icons.hexagon_rounded,
                               size: 140,
-                              color: Color.fromARGB(255, 238, 32, 35),
+                              color: themeColor,
                             ),
                             Image.asset(
                               product,
@@ -137,26 +130,6 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
           ],
         ),
       ),
-    );
-  }
-}
-
-class OpenContainerTransformDemo extends StatelessWidget {
-  const OpenContainerTransformDemo({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return OpenContainer(
-      transitionType: ContainerTransitionType.fade,
-      openBuilder: (BuildContext context, VoidCallback _) {
-        return const HomeMain();
-      },
-      closedBuilder: (BuildContext context, VoidCallback openContainer) {
-        return const SizedBox.shrink();
-      },
-      closedElevation: 0.0,
-      closedShape: const RoundedRectangleBorder(),
-      closedColor: Colors.transparent,
     );
   }
 }
