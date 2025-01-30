@@ -25,13 +25,6 @@ class _ProductCarouselState extends State<ProductCarousel> {
       'bgColor': Colors.orange
     },
     {
-      'image': 'assets/chili_shots.png',
-      'name': 'Chili Shots',
-      'description': 'Pogi ako',
-      'price': '₱90',
-      'bgColor': Colors.orange
-    },
-    {
       'image': 'assets/ginisang_alamang.png',
       'name': 'Ginisang Alamang',
       'description': 'Pogi ako',
@@ -52,6 +45,13 @@ class _ProductCarouselState extends State<ProductCarousel> {
       'price': '₱90',
       'bgColor': Colors.orange
     },
+    {
+      'image': 'assets/chili_shots.png',
+      'name': 'Chili Shots',
+      'description': 'Pogi ako',
+      'price': '₱90',
+      'bgColor': Colors.orange
+    },
   ];
 
   int _currentIndex = 0;
@@ -62,7 +62,7 @@ class _ProductCarouselState extends State<ProductCarousel> {
       child: CarouselSlider.builder(
         itemCount: products.length,
         options: CarouselOptions(
-          height: 400,
+          height: 450,
           enlargeCenterPage: true,
           autoPlay: true,
           autoPlayInterval: Duration(seconds: 3),
@@ -77,12 +77,17 @@ class _ProductCarouselState extends State<ProductCarousel> {
         itemBuilder: (context, index, realIndex) {
           bool isCentered = index == _currentIndex;
           return Container(
-            width: 250,
-            padding: EdgeInsets.all(20),
+            width: 400,
             decoration: BoxDecoration(
               color:
                   isCentered ? products[index]['bgColor'] : Colors.transparent,
               borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Color(0xFFFFDD45),
+                  offset: Offset(0, 3),
+                ),
+              ],
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -90,9 +95,8 @@ class _ProductCarouselState extends State<ProductCarousel> {
               children: [
                 Image.asset(
                   products[index]['image'],
-                  height: 150,
+                  width: 200,
                 ),
-                SizedBox(height: 20),
                 Text(
                   products[index]['name'],
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
