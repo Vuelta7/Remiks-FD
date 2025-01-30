@@ -73,7 +73,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
           children: [
             FadeTransition(
               opacity: _logoAnimation,
-              child: Image.asset('assets/remiks_logo.png', width: 150),
+              child: Image.asset('assets/remiks_logo.png', width: 120),
             ),
             FadeTransition(
               opacity: _logoAnimation,
@@ -92,12 +92,12 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
                         builder: (context, child) {
                           return Transform.translate(
                             offset: Offset(
-                              160 *
+                              120 *
                                   cos(angle +
                                       _loadingAnimation.value *
                                           2 *
                                           3.141592653589793),
-                              160 *
+                              120 *
                                   sin(angle +
                                       _loadingAnimation.value *
                                           2 *
@@ -111,13 +111,13 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
                           children: [
                             Icon(
                               Icons.hexagon_rounded,
-                              size: 140,
+                              size: 100,
                               color: themeColor,
                             ),
                             Image.asset(
                               product,
-                              width: 100,
-                              height: 100,
+                              width: 60,
+                              height: 60,
                             ),
                           ],
                         ),

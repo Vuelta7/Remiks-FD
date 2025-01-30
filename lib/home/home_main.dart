@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:remiksweb/home/contacts.dart';
-import 'package:remiksweb/home/home_page.dart';
 import 'package:remiksweb/home/navbar.dart';
-import 'package:remiksweb/home/products.dart';
-import 'package:remiksweb/utils.dart';
+import 'package:remiksweb/home/product_carousel.dart';
 
 class HomeMain extends StatelessWidget {
   const HomeMain({super.key});
@@ -11,15 +8,13 @@ class HomeMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: themeColor,
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Navbar(),
-            HomePage(),
-            Products(),
-            Contacts(),
+            ProductCarousel(),
           ],
         ),
       ),

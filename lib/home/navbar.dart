@@ -7,24 +7,26 @@ class Navbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-      color: Colors.white,
+      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      color: themeColor,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(vertical: 5.0),
-            child: Image.asset(
-              'assets/remiks_logo.png',
-              height: 60,
+            padding: const EdgeInsets.symmetric(vertical: 7.0),
+            child: ColorFiltered(
+              colorFilter: const ColorFilter.mode(
+                Colors.white,
+                BlendMode.srcIn,
+              ),
+              child: Image.asset(
+                'assets/remiks_logo.png',
+                height: 60,
+              ),
             ),
           ),
           PopupMenuButton<String>(
-            icon: Icon(
-              Icons.menu_rounded,
-              size: 60,
-              color: themeColor,
-            ),
+            icon: MenuButton(),
             onSelected: (String result) {},
             itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
               const PopupMenuItem<String>(
@@ -42,6 +44,54 @@ class Navbar extends StatelessWidget {
             ],
           ),
         ],
+      ),
+    );
+  }
+}
+
+class MenuButton extends StatelessWidget {
+  const MenuButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 100,
+      height: 50,
+      child: Padding(
+        padding: const EdgeInsets.only(top: 5.0),
+        child: Stack(
+          children: [
+            Positioned(
+              top: 4,
+              child: Container(
+                width: 100,
+                height: 35,
+                decoration: BoxDecoration(
+                  color: Color(0xFFE68642),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+              ),
+            ),
+            Container(
+              width: 100,
+              height: 35,
+              decoration: BoxDecoration(
+                color: Color(0xFFFFDD45),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Center(
+                child: Text(
+                  "MENU",
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
