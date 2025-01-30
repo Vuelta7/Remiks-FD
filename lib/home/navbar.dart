@@ -14,14 +14,35 @@ class Navbar extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 7.0),
-            child: ColorFiltered(
-              colorFilter: const ColorFilter.mode(
-                Colors.white,
-                BlendMode.srcIn,
-              ),
-              child: Image.asset(
-                'assets/remiks_logo.png',
-                height: 60,
+            child: SizedBox(
+              width: 70,
+              height: 70,
+              child: Stack(
+                children: [
+                  Positioned(
+                    top: 3,
+                    child: ColorFiltered(
+                      colorFilter: const ColorFilter.mode(
+                        Color(0xFFE68642),
+                        BlendMode.srcIn,
+                      ),
+                      child: Image.asset(
+                        'assets/remiks_logo.png',
+                        height: 60,
+                      ),
+                    ),
+                  ),
+                  ColorFiltered(
+                    colorFilter: const ColorFilter.mode(
+                      Color(0xFFFFDD45),
+                      BlendMode.srcIn,
+                    ),
+                    child: Image.asset(
+                      'assets/remiks_logo.png',
+                      height: 60,
+                    ),
+                  ),
+                ],
               ),
             ),
           ),
@@ -85,7 +106,7 @@ class MenuButton extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    color: themeColor,
                   ),
                 ),
               ),

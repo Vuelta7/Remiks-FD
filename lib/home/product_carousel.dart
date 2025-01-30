@@ -65,7 +65,7 @@ class _ProductCarouselState extends State<ProductCarousel> {
           height: 400,
           enlargeCenterPage: true,
           autoPlay: true,
-          autoPlayInterval: Duration(seconds: 1),
+          autoPlayInterval: Duration(seconds: 3),
           enableInfiniteScroll: true,
           viewportFraction: 0.6,
           onPageChanged: (index, reason) {
@@ -77,6 +77,7 @@ class _ProductCarouselState extends State<ProductCarousel> {
         itemBuilder: (context, index, realIndex) {
           bool isCentered = index == _currentIndex;
           return Container(
+            width: 250,
             padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
               color:
