@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:remiksweb/routes/navbar.dart';
-import 'package:remiksweb/routes/product_carousel.dart';
+import 'package:remiksweb/routes/intro_page.dart';
 
 class HomeMain extends StatelessWidget {
   const HomeMain({super.key});
@@ -13,8 +12,7 @@ class HomeMain extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Navbar(),
-            ProductCarousel(),
+            IntroPage(),
           ],
         ),
       ),

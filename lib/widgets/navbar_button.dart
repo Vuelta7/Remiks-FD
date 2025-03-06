@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:remiksweb/utils.dart';
 
 class MenuButton extends StatelessWidget {
   const MenuButton({super.key});
@@ -19,7 +18,7 @@ class MenuButton extends StatelessWidget {
                 width: 100,
                 height: 35,
                 decoration: BoxDecoration(
-                  color: Color(0xFFE68642),
+                  color: Colors.red[900],
                   borderRadius: BorderRadius.circular(20),
                 ),
               ),
@@ -28,7 +27,7 @@ class MenuButton extends StatelessWidget {
               width: 100,
               height: 35,
               decoration: BoxDecoration(
-                color: Color(0xFFFFDD45),
+                color: Colors.red,
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Center(
@@ -37,7 +36,7 @@ class MenuButton extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: themeColor,
+                    color: Colors.yellowAccent,
                   ),
                 ),
               ),
