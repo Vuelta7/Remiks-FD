@@ -59,65 +59,63 @@ class _ProductCarouselState extends State<ProductCarousel> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      child: Center(
-        child: CarouselSlider.builder(
-          itemCount: products.length,
-          options: CarouselOptions(
-            height: 450,
-            enlargeCenterPage: true,
-            autoPlay: true,
-            autoPlayInterval: Duration(seconds: 3),
-            enableInfiniteScroll: true,
-            viewportFraction: 0.6,
-            onPageChanged: (index, reason) {
-              setState(() {
-                _currentIndex = index;
-              });
-            },
-          ),
-          itemBuilder: (context, index, realIndex) {
-            bool isCentered = index == _currentIndex;
-            return Container(
-              width: 400,
-              decoration: BoxDecoration(
-                color: isCentered
-                    ? products[index]['bgColor']
-                    : Colors.transparent,
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0xFFFFDD45),
-                    offset: Offset(0, 3),
-                  ),
-                ],
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    products[index]['image'],
-                    width: 200,
-                  ),
-                  Text(
-                    products[index]['name'],
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    products[index]['description'],
-                    textAlign: TextAlign.center,
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    products[index]['price'],
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
-            );
+      height: 1000,
+      child: CarouselSlider.builder(
+        itemCount: products.length,
+        options: CarouselOptions(
+          height: 450,
+          enlargeCenterPage: true,
+          autoPlay: true,
+          autoPlayInterval: Duration(seconds: 3),
+          enableInfiniteScroll: true,
+          viewportFraction: 0.6,
+          onPageChanged: (index, reason) {
+            setState(() {
+              _currentIndex = index;
+            });
           },
         ),
+        itemBuilder: (context, index, realIndex) {
+          bool isCentered = index == _currentIndex;
+          return Container(
+            width: 400,
+            decoration: BoxDecoration(
+              color:
+                  isCentered ? products[index]['bgColor'] : Colors.transparent,
+              borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Color(0xFFFFDD45),
+                  offset: Offset(0, 3),
+                ),
+              ],
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  products[index]['image'],
+                  width: 200,
+                ),
+                Text(
+                  products[index]['name'],
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 10),
+                Text(
+                  products[index]['description'],
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 10),
+                Text(
+                  products[index]['price'],
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+          );
+        },
       ),
     );
   }

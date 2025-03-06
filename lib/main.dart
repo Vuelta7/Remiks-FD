@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:remiksweb/Pages/footer.dart';
 import 'package:remiksweb/Pages/intro_page.dart';
-import 'package:remiksweb/Pages/second_page.dart';
 import 'package:remiksweb/splash_page.dart';
 
 void main() {
@@ -30,16 +29,13 @@ class HomeMain extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              IntroPage(),
-              SecondPage(),
-              Footer(),
-            ],
-          ),
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            IntroPage(),
+            Footer(),
+          ],
         ),
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:remiksweb/utils.dart';
 import 'package:remiksweb/widgets/navbar_button.dart';
 import 'package:remiksweb/widgets/product_showcase.dart';
 import 'package:remiksweb/widgets/remiks_logo.dart';
@@ -57,36 +58,60 @@ class IntroPage extends StatelessWidget {
           SizedBox(
             height: 100,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(
-                width: 200,
-                height: 500,
-                child: ProductShowcase(),
-              ),
-              SizedBox(
-                width: 300,
-              ),
-              Column(
-                children: [
-                  RemiksText(
-                    fontSize: 50,
-                    text: 'Sarap up to\nthe last drop',
-                    font: 'Bitshow',
-                  ),
-                  RemiksText(
-                    fontSize: 50,
-                    text: 'Sarap up to\nthe last drop',
-                    font: 'Hey',
-                  ),
-                  SizedBox(
-                    child: MenuButton(text: 'Order Now'),
-                  ),
-                ],
-              ),
-            ],
-          ),
+          isMobileWeb(context)
+              ? Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      width: 200,
+                      height: 300,
+                      child: ProductShowcase(),
+                    ),
+                    RemiksText(
+                      fontSize: 35,
+                      text: 'Sarap up to\nthe last drop',
+                      font: 'Bitshow',
+                    ),
+                    RemiksText(
+                      fontSize: 35,
+                      text: 'Sarap up to\nthe last drop',
+                      font: 'Hey',
+                    ),
+                    SizedBox(
+                      child: MenuButton(text: 'Order Now'),
+                    ),
+                  ],
+                )
+              : Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      width: 200,
+                      height: 500,
+                      child: ProductShowcase(),
+                    ),
+                    SizedBox(
+                      width: 200,
+                    ),
+                    Column(
+                      children: [
+                        RemiksText(
+                          fontSize: 40,
+                          text: 'Sarap up to\nthe last drop',
+                          font: 'Bitshow',
+                        ),
+                        RemiksText(
+                          fontSize: 40,
+                          text: 'Sarap up to\nthe last drop',
+                          font: 'Hey',
+                        ),
+                        SizedBox(
+                          child: MenuButton(text: 'Order Now'),
+                        ),
+                      ],
+                    ),
+                  ],
+                )
         ],
       ),
     );
