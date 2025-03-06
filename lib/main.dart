@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:remiksweb/Pages/footer.dart';
 import 'package:remiksweb/Pages/intro_page.dart';
+import 'package:remiksweb/pages/product_carousel.dart';
 import 'package:remiksweb/splash_page.dart';
 
 void main() {
@@ -31,10 +31,9 @@ class HomeMain extends StatelessWidget {
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             IntroPage(),
-            Footer(),
+            ProductCarousel(),
           ],
         ),
       ),
