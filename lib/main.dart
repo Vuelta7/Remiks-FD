@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:remiksweb/pages/home_main.dart';
+import 'package:remiksweb/Pages/footer.dart';
+import 'package:remiksweb/Pages/intro_page.dart';
+import 'package:remiksweb/Pages/second_page.dart';
 import 'package:remiksweb/splash_page.dart';
 
 void main() {
@@ -17,6 +19,29 @@ class MyApp extends StatelessWidget {
       routes: {
         '/home': (context) => const HomeMain(),
       },
+    );
+  }
+}
+
+class HomeMain extends StatelessWidget {
+  const HomeMain({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              IntroPage(),
+              SecondPage(),
+              Footer(),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

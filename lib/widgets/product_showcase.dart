@@ -13,9 +13,12 @@ class _ProductShowcaseState extends State<ProductShowcase> {
   int _currentIndex = 0;
   double _opacity = 1.0;
   final List<String> _images = [
+    'assets/chili_shots.png',
     'assets/ginisang_alamang.png',
+    'assets/sawsaw_suka.png',
     'assets/chicken_pastil.png',
-    'assets/chili_garlic.png'
+    'assets/hot_sauce.png',
+    'assets/chili_garlic.png',
   ];
 
   @override
@@ -25,7 +28,7 @@ class _ProductShowcaseState extends State<ProductShowcase> {
   }
 
   void _startFadeTransition() {
-    Timer.periodic(const Duration(seconds: 3), (timer) {
+    Timer.periodic(const Duration(seconds: 4), (timer) {
       setState(() {
         _opacity = 0.0;
       });

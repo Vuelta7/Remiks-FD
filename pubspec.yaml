@@ -40,3 +40,6 @@ flutter:
     - family: Bitshow
       fonts:
         - asset: assets/Bitshow.ttf
+    - family: Hey
+      fonts:
+        - asset: assets/Hey Comic.ttf

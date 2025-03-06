@@ -3,14 +3,20 @@ import 'package:flutter/material.dart';
 class RemiksText extends StatelessWidget {
   final String text;
   final double fontSize;
-  const RemiksText({super.key, required this.fontSize, required this.text});
+  final String font;
+  const RemiksText(
+      {super.key,
+      required this.fontSize,
+      required this.text,
+      required this.font});
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
+      textAlign: TextAlign.center,
       style: TextStyle(
-        fontFamily: 'Bitshow',
+        fontFamily: font,
         fontSize: fontSize,
         color: Colors.red,
         shadows: [

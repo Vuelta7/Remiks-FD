@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:remiksweb/widgets/navbar_button.dart';
-import 'package:remiksweb/widgets/product_carousel.dart';
+import 'package:remiksweb/widgets/product_showcase.dart';
 import 'package:remiksweb/widgets/remiks_logo.dart';
 import 'package:remiksweb/widgets/remiks_text.dart';
 
@@ -31,7 +31,9 @@ class IntroPage extends StatelessWidget {
                   width: 50,
                 ),
                 PopupMenuButton<String>(
-                  icon: MenuButton(),
+                  icon: MenuButton(
+                    text: 'MENU',
+                  ),
                   onSelected: (String result) {},
                   itemBuilder: (BuildContext context) =>
                       <PopupMenuEntry<String>>[
@@ -52,6 +54,9 @@ class IntroPage extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(
+            height: 100,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -60,7 +65,26 @@ class IntroPage extends StatelessWidget {
                 height: 500,
                 child: ProductShowcase(),
               ),
-              RemiksText(fontSize: 50, text: 'Sarap up to\nthe last drop'),
+              SizedBox(
+                width: 300,
+              ),
+              Column(
+                children: [
+                  RemiksText(
+                    fontSize: 50,
+                    text: 'Sarap up to\nthe last drop',
+                    font: 'Bitshow',
+                  ),
+                  RemiksText(
+                    fontSize: 50,
+                    text: 'Sarap up to\nthe last drop',
+                    font: 'Hey',
+                  ),
+                  SizedBox(
+                    child: MenuButton(text: 'Order Now'),
+                  ),
+                ],
+              ),
             ],
           ),
         ],
