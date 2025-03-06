@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:remiksweb/routes/home_main.dart';
+import 'package:remiksweb/pages/home_main.dart';
 import 'package:remiksweb/splash_page.dart';
 
 void main() {

@@ -6,13 +6,12 @@ class RemiksLogo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 300,
-      height: 200,
+      width: 160,
+      height: 160,
       child: Stack(
         children: [
           Positioned(
-            top: 23,
-            left: 100,
+            top: 3,
             child: ColorFiltered(
               colorFilter: ColorFilter.mode(Colors.red[900]!, BlendMode.srcIn),
               child: Image.asset(
@@ -22,16 +21,12 @@ class RemiksLogo extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            top: 20,
-            left: 100,
-            child: ColorFiltered(
-              colorFilter: ColorFilter.mode(Colors.red, BlendMode.srcIn),
-              child: Image.asset(
-                'assets/remiks_logo.png',
-                height: 150,
-                width: 150,
-              ),
+          ColorFiltered(
+            colorFilter: ColorFilter.mode(Colors.red, BlendMode.srcIn),
+            child: Image.asset(
+              'assets/remiks_logo.png',
+              height: 150,
+              width: 150,
             ),
           ),
         ],

@@ -30,9 +30,8 @@ flutter:
     - assets/chicken_pastil.png
     - assets/chili_garlic.png
     - assets/facebook.png
-    - assets/blueprint.webp
-    - assets/intro_background.webp
     - assets/background_intro_raw.webp
+    - assets/remiks_vision.webp
 
   fonts:
     - family: Roboto

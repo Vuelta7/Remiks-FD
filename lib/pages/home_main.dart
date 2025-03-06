@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:remiksweb/routes/intro_page.dart';
+import 'package:remiksweb/pages/footer.dart';
+import 'package:remiksweb/pages/intro_page.dart';
+import 'package:remiksweb/pages/second_page.dart';
 
 class HomeMain extends StatelessWidget {
   const HomeMain({super.key});
@@ -13,6 +15,8 @@ class HomeMain extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             IntroPage(),
+            SecondPage(),
+            Footer(),
           ],
         ),
       ),
