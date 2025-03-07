@@ -21,7 +21,7 @@ class RemiksText extends StatelessWidget {
         color: Colors.red,
         shadows: [
           Shadow(
-            offset: Offset(3, 3),
+            offset: Offset(2, 2),
             color: Colors.red[900]!,
             blurRadius: 0,
           ),
