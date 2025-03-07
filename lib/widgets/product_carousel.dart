@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:remiksweb/utils.dart';
 
 class ProductCarousel extends StatefulWidget {
   const ProductCarousel({super.key});
@@ -20,7 +21,8 @@ class _ProductCarouselState extends State<ProductCarousel> {
     {
       'image': 'assets/chili_garlic.png',
       'name': 'Chili Garlic',
-      'description': 'Pogi ako',
+      'description':
+          'lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem ',
       'price': '₱90',
       'bgColor': Colors.orange
     },
@@ -41,7 +43,8 @@ class _ProductCarouselState extends State<ProductCarousel> {
     {
       'image': 'assets/sawsaw_suka.png',
       'name': 'Saw Saw Suka',
-      'description': 'Pogi ako',
+      'description':
+          'Pogi ako Pogi akoPogi akoPogi akoPogi akoPogi akoPogi akoPogi akoPogi akoPogi ako',
       'price': '₱90',
       'bgColor': Colors.orange
     },
@@ -60,19 +63,33 @@ class _ProductCarouselState extends State<ProductCarousel> {
   Widget build(BuildContext context) {
     return CarouselSlider.builder(
       itemCount: products.length,
-      options: CarouselOptions(
-        height: 450,
-        enlargeCenterPage: true,
-        autoPlay: true,
-        autoPlayInterval: Duration(seconds: 1),
-        enableInfiniteScroll: true,
-        viewportFraction: 0.6,
-        onPageChanged: (index, reason) {
-          setState(() {
-            _currentIndex = index;
-          });
-        },
-      ),
+      options: isMobileWeb(context)
+          ? CarouselOptions(
+              height: 450,
+              enlargeCenterPage: true,
+              autoPlay: true,
+              autoPlayInterval: Duration(seconds: 1),
+              enableInfiniteScroll: true,
+              viewportFraction: 0.6,
+              onPageChanged: (index, reason) {
+                setState(() {
+                  _currentIndex = index;
+                });
+              },
+            )
+          : CarouselOptions(
+              height: 450,
+              enlargeCenterPage: true,
+              autoPlay: true,
+              autoPlayInterval: Duration(seconds: 3),
+              enableInfiniteScroll: true,
+              viewportFraction: 0.3,
+              onPageChanged: (index, reason) {
+                setState(() {
+                  _currentIndex = index;
+                });
+              },
+            ),
       itemBuilder: (context, index, realIndex) {
         bool isCentered = index == _currentIndex;
         return Container(
@@ -83,33 +100,44 @@ class _ProductCarouselState extends State<ProductCarousel> {
             boxShadow: [
               BoxShadow(
                 color: Color(0xFFFFDD45),
-                offset: Offset(0, 2),
+                offset: Offset(0, 0),
               ),
             ],
           ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(
-                products[index]['image'],
-                width: 200,
+          child: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    products[index]['image'],
+                    width: 200,
+                  ),
+                  Text(
+                    products[index]['name'],
+                    style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Soft'),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    products[index]['description'],
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontFamily: 'Hey',
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    products[index]['price'],
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                ],
               ),
-              Text(
-                products[index]['name'],
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              SizedBox(height: 10),
-              Text(
-                products[index]['description'],
-                textAlign: TextAlign.center,
-              ),
-              SizedBox(height: 10),
-              Text(
-                products[index]['price'],
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-            ],
+            ),
           ),
         );
       },

@@ -68,11 +68,13 @@ class IntroPage extends StatelessWidget {
                       fontSize: 35,
                       text: 'Sarap up to\nthe last drop',
                       font: 'Bitshow',
+                      color: Colors.red,
                     ),
                     RemiksText(
                       fontSize: 35,
                       text: 'Sarap up to\nthe last drop',
                       font: 'Hey',
+                      color: Colors.red,
                     ),
                     SizedBox(
                       child: MenuButton(text: 'Order Now'),
@@ -98,11 +100,13 @@ class IntroPage extends StatelessWidget {
                             fontSize: 40,
                             text: 'Sarap up to\nthe last drop',
                             font: 'Bitshow',
+                            color: Colors.red,
                           ),
                           RemiksText(
                             fontSize: 40,
                             text: 'Sarap up to\nthe last drop',
                             font: 'Hey',
+                            color: Colors.red,
                           ),
                           SizedBox(
                             child: MenuButton(text: 'Order Now'),

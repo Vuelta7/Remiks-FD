@@ -4,11 +4,14 @@ class RemiksText extends StatelessWidget {
   final String text;
   final double fontSize;
   final String font;
-  const RemiksText(
-      {super.key,
-      required this.fontSize,
-      required this.text,
-      required this.font});
+  final Color color;
+  const RemiksText({
+    super.key,
+    required this.fontSize,
+    required this.text,
+    required this.font,
+    required this.color,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +21,7 @@ class RemiksText extends StatelessWidget {
       style: TextStyle(
         fontFamily: font,
         fontSize: fontSize,
-        color: Colors.red,
+        color: color,
         shadows: [
           Shadow(
             offset: Offset(2, 2),

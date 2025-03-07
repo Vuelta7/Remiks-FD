@@ -46,3 +46,6 @@ flutter:
     - family: Hey
       fonts:
         - asset: assets/Hey Comic.ttf
+    - family: Soft
+      fonts:
+        - asset: assets/Softizen.ttf

@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:remiksweb/widgets/product_carousel.dart';
+import 'package:remiksweb/widgets/remiks_text.dart';
 
 class ProductPage extends StatelessWidget {
   const ProductPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
+      color: Color.fromARGB(255, 138, 13, 11),
       padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
       child: Column(
         children: [
-          Text(
-            'Our Products',
-            style: TextStyle(fontFamily: 'Bitshow'),
+          RemiksText(
+            fontSize: 50,
+            text: 'OUR PRODUCTS',
+            font: 'Bitshow',
+            color: Colors.orange,
           ),
           ProductCarousel(),
         ],
