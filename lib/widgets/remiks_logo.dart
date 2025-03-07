@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
 class RemiksLogo extends StatelessWidget {
-  const RemiksLogo({super.key});
+  final double size;
+  const RemiksLogo({super.key, required this.size});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 160,
-      height: 160,
+      width: size + 10,
+      height: size + 10,
       child: Stack(
         children: [
           Positioned(
@@ -16,8 +17,8 @@ class RemiksLogo extends StatelessWidget {
               colorFilter: ColorFilter.mode(Colors.red[900]!, BlendMode.srcIn),
               child: Image.asset(
                 'assets/remiks_logo.png',
-                height: 150,
-                width: 150,
+                height: size,
+                width: size,
               ),
             ),
           ),
@@ -25,8 +26,8 @@ class RemiksLogo extends StatelessWidget {
             colorFilter: ColorFilter.mode(Colors.red, BlendMode.srcIn),
             child: Image.asset(
               'assets/remiks_logo.png',
-              height: 150,
-              width: 150,
+              height: size,
+              width: size,
             ),
           ),
         ],

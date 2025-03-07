@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:remiksweb/widgets/product_carousel.dart';
 import 'package:remiksweb/widgets/remiks_text.dart';
 
-class ProductPage extends StatelessWidget {
-  const ProductPage({super.key});
+class ProductSection extends StatelessWidget {
+  const ProductSection({super.key});
 
   @override
   Widget build(BuildContext context) {

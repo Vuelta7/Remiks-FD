@@ -59,37 +59,30 @@ class _ProductCarouselState extends State<ProductCarousel> {
 
   int _currentIndex = 0;
 
+  void _onPageChanged(int index, CarouselPageChangedReason reason) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
+
+  CarouselOptions _buildCarouselOptions(BuildContext context) {
+    return CarouselOptions(
+      height: 450,
+      enlargeCenterPage: true,
+      autoPlay: true,
+      autoPlayInterval:
+          isMobileWeb(context) ? Duration(seconds: 1) : Duration(seconds: 3),
+      enableInfiniteScroll: true,
+      viewportFraction: isMobileWeb(context) ? 0.6 : 0.3,
+      onPageChanged: _onPageChanged,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return CarouselSlider.builder(
       itemCount: products.length,
-      options: isMobileWeb(context)
-          ? CarouselOptions(
-              height: 450,
-              enlargeCenterPage: true,
-              autoPlay: true,
-              autoPlayInterval: Duration(seconds: 1),
-              enableInfiniteScroll: true,
-              viewportFraction: 0.6,
-              onPageChanged: (index, reason) {
-                setState(() {
-                  _currentIndex = index;
-                });
-              },
-            )
-          : CarouselOptions(
-              height: 450,
-              enlargeCenterPage: true,
-              autoPlay: true,
-              autoPlayInterval: Duration(seconds: 3),
-              enableInfiniteScroll: true,
-              viewportFraction: 0.3,
-              onPageChanged: (index, reason) {
-                setState(() {
-                  _currentIndex = index;
-                });
-              },
-            ),
+      options: _buildCarouselOptions(context),
       itemBuilder: (context, index, realIndex) {
         bool isCentered = index == _currentIndex;
         return Container(
@@ -117,6 +110,7 @@ class _ProductCarouselState extends State<ProductCarousel> {
                   ),
                   Text(
                     products[index]['name'],
+                    textAlign: TextAlign.center,
                     style: TextStyle(
                         fontSize: 30,
                         fontWeight: FontWeight.bold,

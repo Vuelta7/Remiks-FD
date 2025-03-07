@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:remiksweb/pages/footer.dart';
-import 'package:remiksweb/pages/intro_page.dart';
-import 'package:remiksweb/pages/product_page.dart';
+import 'package:remiksweb/pages/home%20page/home_main.dart';
 import 'package:remiksweb/splash_page.dart';
 
 void main() {
@@ -17,28 +15,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: const SplashPage(),
       routes: {
-        '/home': (context) => const HomeMain(),
+        '/home': (context) => const HomePage(),
       },
-    );
-  }
-}
-
-class HomeMain extends StatelessWidget {
-  const HomeMain({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            IntroPage(),
-            ProductPage(),
-            Footer(),
-          ],
-        ),
-      ),
     );
   }
 }
