@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:remiksweb/Pages/intro_page.dart';
-import 'package:remiksweb/pages/product_carousel.dart';
+import 'package:remiksweb/pages/footer.dart';
+import 'package:remiksweb/pages/product_page.dart';
+import 'package:remiksweb/pages/vision_page.dart';
 import 'package:remiksweb/splash_page.dart';
 
 void main() {
@@ -33,7 +35,9 @@ class HomeMain extends StatelessWidget {
         child: Column(
           children: [
             IntroPage(),
-            ProductCarousel(),
+            ProductPage(),
+            VisionPage(),
+            Footer(),
           ],
         ),
       ),

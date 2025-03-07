@@ -7,7 +7,10 @@ class VisionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return isMobileWeb(context)
-        ? Image.asset('assets/remiks_vision.webp')
+        ? Image.asset(
+            'assets/remiks_vision.webp',
+            fit: BoxFit.cover,
+          )
         : Container();
   }
 }

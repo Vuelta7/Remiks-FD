@@ -55,9 +55,6 @@ class IntroPage extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
-            height: 100,
-          ),
           isMobileWeb(context)
               ? Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -82,35 +79,38 @@ class IntroPage extends StatelessWidget {
                     ),
                   ],
                 )
-              : Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      width: 200,
-                      height: 500,
-                      child: ProductShowcase(),
-                    ),
-                    SizedBox(
-                      width: 200,
-                    ),
-                    Column(
-                      children: [
-                        RemiksText(
-                          fontSize: 40,
-                          text: 'Sarap up to\nthe last drop',
-                          font: 'Bitshow',
-                        ),
-                        RemiksText(
-                          fontSize: 40,
-                          text: 'Sarap up to\nthe last drop',
-                          font: 'Hey',
-                        ),
-                        SizedBox(
-                          child: MenuButton(text: 'Order Now'),
-                        ),
-                      ],
-                    ),
-                  ],
+              : Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 100, 0, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        width: 200,
+                        height: 500,
+                        child: ProductShowcase(),
+                      ),
+                      SizedBox(
+                        width: 200,
+                      ),
+                      Column(
+                        children: [
+                          RemiksText(
+                            fontSize: 40,
+                            text: 'Sarap up to\nthe last drop',
+                            font: 'Bitshow',
+                          ),
+                          RemiksText(
+                            fontSize: 40,
+                            text: 'Sarap up to\nthe last drop',
+                            font: 'Hey',
+                          ),
+                          SizedBox(
+                            child: MenuButton(text: 'Order Now'),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 )
         ],
       ),
