@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 bool isMobileWeb(BuildContext context) {
   return kIsWeb && MediaQuery.of(context).size.width < 800;
@@ -20,3 +21,5 @@ Color getShade(Color color, int shade) {
 }
 
 Color themeColor = const Color.fromARGB(255, 238, 32, 35);
+
+final selectedPage = StateProvider<int>((ref) => 0);

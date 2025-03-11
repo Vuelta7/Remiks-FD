@@ -98,6 +98,7 @@ class _ProductCarouselState extends State<ProductCarousel> {
             ],
           ),
           child: SingleChildScrollView(
+            physics: NeverScrollableScrollPhysics(),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(

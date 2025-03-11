@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:remiksweb/utils.dart';
+import 'package:remiksweb/widgets/page_selector.dart';
 import 'package:remiksweb/widgets/remiks_icon.dart';
 import 'package:remiksweb/widgets/remiks_logo.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -65,6 +66,7 @@ class Footer extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             RemiksLogo(size: 200),
+            PageSelector(),
             isMobileWeb(context)
                 ? Column(
                     mainAxisAlignment: MainAxisAlignment.start,
