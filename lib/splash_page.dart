@@ -52,7 +52,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
 
     _loadingController.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        Navigator.pushNamed(context, '/home');
+        Navigator.pushNamed(context, '/Home');
       }
     });
   }

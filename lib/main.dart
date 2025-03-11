@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:remiksweb/pages/home%20page/home_main.dart';
+import 'package:remiksweb/pages/loaction%20page/location_main.dart';
 import 'package:remiksweb/splash_page.dart';
 
 void main() {
@@ -19,9 +20,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const SplashPage(),
+      home: SplashPage(),
       routes: {
-        '/home': (context) => const HomePage(),
+        '/Home': (context) => const HomePage(),
+        '/Locations': (context) => const LocationPage(),
       },
     );
   }

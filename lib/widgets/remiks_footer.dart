@@ -6,8 +6,8 @@ import 'package:remiksweb/widgets/remiks_icon.dart';
 import 'package:remiksweb/widgets/remiks_logo.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class Footer extends StatelessWidget {
-  const Footer({super.key});
+class RemiksFooter extends StatelessWidget {
+  const RemiksFooter({super.key});
 
   void phoneNum(context) {
     Clipboard.setData(ClipboardData(text: '0923 395 4930'));

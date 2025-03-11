@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
           children: [
             IntroSection(),
             ProductSection(),
-            Footer(),
+            RemiksFooter(),
           ],
         ),
       ),

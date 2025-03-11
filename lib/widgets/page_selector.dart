@@ -28,6 +28,7 @@ class _PageSelectorState extends ConsumerState<PageSelector> {
             return GestureDetector(
               onTap: () {
                 ref.read(selectedPage.notifier).state = index;
+                Navigator.pushNamed(context, '/${menuItems[index]}');
               },
               child: Column(
                 mainAxisSize: MainAxisSize.min,

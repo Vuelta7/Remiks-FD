@@ -41,7 +41,7 @@ class _RemiksNavbarState extends State<RemiksNavbar> {
                     ),
                     const PopupMenuItem<String>(
                       value: 'Locations',
-                      child: Text('Contacts'),
+                      child: Text('Locations'),
                     ),
                     const PopupMenuItem<String>(
                       value: 'Contacts',
@@ -49,7 +49,7 @@ class _RemiksNavbarState extends State<RemiksNavbar> {
                     ),
                     const PopupMenuItem<String>(
                       value: 'About us',
-                      child: Text('Contacts'),
+                      child: Text('About us'),
                     ),
                   ],
                 )

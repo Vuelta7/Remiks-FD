@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:remiksweb/utils.dart';
 
-class VisionPage extends StatelessWidget {
-  const VisionPage({super.key});
+class AboutUsMain extends StatelessWidget {
+  const AboutUsMain({super.key});
 
   @override
   Widget build(BuildContext context) {
