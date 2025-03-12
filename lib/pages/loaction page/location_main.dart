@@ -22,10 +22,21 @@ class LocationPage extends StatelessWidget {
           child: Column(
             children: [
               RemiksNavbar(),
-              SizedBox(
+              Container(
                 height: 800,
                 width: 1400,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.red[900]!,
+                      blurRadius: 7,
+                    ),
+                  ],
+                ),
                 child: ShopLocationMap(),
+              ),
+              SizedBox(
+                height: 20,
               ),
               RemiksFooter(),
             ],

@@ -65,15 +65,21 @@ class RemiksFooter extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            RemiksLogo(size: 200),
-            PageSelector(),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                RemiksLogo(size: 150),
+                if (isMobileWeb(context)) PageSelector(),
+              ],
+            ),
+            if (!isMobileWeb(context)) PageSelector(),
             isMobileWeb(context)
                 ? Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: _buildIconButtons(context),
                   )
                 : Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: _buildIconButtons(context),
                   )
           ],

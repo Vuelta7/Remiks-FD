@@ -26,6 +26,53 @@ Color themeColor = const Color.fromARGB(255, 238, 32, 35);
 
 final selectedPage = StateProvider<int>((ref) => 0);
 
+const List<Map<String, dynamic>> products = [
+  {
+    'image': 'assets/chicken_pastil.png',
+    'name': 'Chicken Pastil',
+    'description': 'Pogi ako',
+    'price': '₱90',
+    'bgColor': Colors.orange
+  },
+  {
+    'image': 'assets/chili_garlic.png',
+    'name': 'Chili Garlic',
+    'description':
+        'lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem ',
+    'price': '₱90',
+    'bgColor': Colors.orange
+  },
+  {
+    'image': 'assets/ginisang_alamang.png',
+    'name': 'Ginisang Alamang',
+    'description': 'Pogi ako',
+    'price': '₱90',
+    'bgColor': Colors.orange
+  },
+  {
+    'image': 'assets/hot_sauce.png',
+    'name': 'Hot Sauce',
+    'description': 'Pogi ako',
+    'price': '₱90',
+    'bgColor': Colors.orange
+  },
+  {
+    'image': 'assets/sawsaw_suka.png',
+    'name': 'Saw Saw Suka',
+    'description':
+        'Pogi ako Pogi akoPogi akoPogi akoPogi akoPogi akoPogi akoPogi akoPogi akoPogi ako',
+    'price': '₱90',
+    'bgColor': Colors.orange
+  },
+  {
+    'image': 'assets/chili_shots.png',
+    'name': 'Chili Shots',
+    'description': 'Pogi ako',
+    'price': '₱90',
+    'bgColor': Colors.orange
+  },
+];
+
 final locationProvider = FutureProvider<LatLng?>((ref) async {
   LocationPermission permission = await Geolocator.requestPermission();
   if (permission == LocationPermission.denied ||

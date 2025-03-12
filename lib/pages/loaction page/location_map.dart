@@ -36,7 +36,7 @@ class _ShopLocationMapState extends State<ShopLocationMap> {
 
     setState(() {
       _userLocation = LatLng(position.latitude, position.longitude);
-      _mapController.move(_userLocation!, 15); // Move map to user location
+      _mapController.move(_userLocation!, 15);
     });
   }
 
@@ -45,7 +45,7 @@ class _ShopLocationMapState extends State<ShopLocationMap> {
     return FlutterMap(
       mapController: _mapController,
       options: MapOptions(
-        initialCenter: LatLng(14.8782598, 120.8658127), // Default location
+        initialCenter: LatLng(14.8782598, 120.8658127),
         initialZoom: 15,
       ),
       children: [
