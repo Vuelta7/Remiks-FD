@@ -22,8 +22,11 @@ class LocationPage extends StatelessWidget {
           child: Column(
             children: [
               RemiksNavbar(),
+              SizedBox(
+                height: 100,
+              ),
               Container(
-                height: 800,
+                height: 500,
                 width: 1400,
                 decoration: BoxDecoration(
                   boxShadow: [
@@ -36,7 +39,7 @@ class LocationPage extends StatelessWidget {
                 child: ShopLocationMap(),
               ),
               SizedBox(
-                height: 20,
+                height: 100,
               ),
               RemiksFooter(),
             ],

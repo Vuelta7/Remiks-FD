@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:remiksweb/pages/home%20page/home_main.dart';
 import 'package:remiksweb/pages/loaction%20page/location_main.dart';
+import 'package:remiksweb/pages/product%20page/product_main.dart';
 import 'package:remiksweb/splash_page.dart';
 
 void main() {
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/Home': (context) => const HomePage(),
         '/Locations': (context) => const LocationPage(),
+        '/Products': (context) => const ProductPage(),
       },
     );
   }
