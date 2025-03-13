@@ -61,25 +61,27 @@ class _ProductCarouselState extends State<ProductCarousel> {
                 children: [
                   Image.asset(
                     products[index]['image'],
-                    width: 200,
+                    width: 220,
                   ),
                   RemiksText(
-                      fontSize: 30,
-                      text: products[index]['name'],
-                      font: 'Soft',
-                      color: Colors.red),
-                  SizedBox(height: 10),
-                  Text(
-                    products[index]['description'],
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontFamily: 'Hey',
-                    ),
+                    fontSize: 30,
+                    text: products[index]['name'],
+                    font: 'Soft',
+                    color: Colors.red,
                   ),
                   SizedBox(height: 10),
-                  Text(
-                    products[index]['price'],
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  RemiksText(
+                    fontSize: 15,
+                    text: products[index]['description'],
+                    font: 'Hey',
+                    color: Colors.white,
+                  ),
+                  SizedBox(height: 10),
+                  RemiksText(
+                    fontSize: 30,
+                    text: products[index]['price'],
+                    font: 'Soft',
+                    color: Colors.red,
                   ),
                 ],
               ),

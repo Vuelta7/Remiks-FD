@@ -26,35 +26,32 @@ class _PageSelectorState extends ConsumerState<PageSelector> {
             icon: MenuButton(
               text: 'MENU',
             ),
-            onSelected: (String result) {},
-            itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-              const PopupMenuItem<String>(
-                value: 'Home',
-                child: Text('Home'),
+            onSelected: (String result) {
+              Navigator.pushNamed(context, '/$result');
+            },
+            itemBuilder: (BuildContext context) => List.generate(
+              menuItems.length,
+              (index) => PopupMenuItem<String>(
+                value: menuItems[index],
+                child: RemiksText(
+                  fontSize: 20,
+                  text: menuItems[index],
+                  font: 'Bitshow',
+                  color: Colors.red,
+                ),
+                onTap: () {
+                  Navigator.pushNamed(context, '/${menuItems[index]}');
+                },
               ),
-              const PopupMenuItem<String>(
-                value: 'Products',
-                child: Text('Products'),
-              ),
-              const PopupMenuItem<String>(
-                value: 'Locations',
-                child: Text('Locations'),
-              ),
-              const PopupMenuItem<String>(
-                value: 'Contacts',
-                child: Text('Contacts'),
-              ),
-              const PopupMenuItem<String>(
-                value: 'About us',
-                child: Text('About us'),
-              ),
-            ],
+            ),
           )
         : SizedBox(
             width: 600,
             child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: List.generate(menuItems.length, (index) {
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: List.generate(
+                menuItems.length,
+                (index) {
                   return GestureDetector(
                     onTap: () {
                       ref.read(selectedPage.notifier).state = index;
@@ -64,12 +61,12 @@ class _PageSelectorState extends ConsumerState<PageSelector> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         RemiksText(
-                            fontSize: 25,
-                            text: menuItems[index],
-                            font: 'Hey',
-                            color: Colors.red),
-                        AnimatedContainer(
-                          duration: Duration(milliseconds: 300),
+                          fontSize: 25,
+                          text: menuItems[index],
+                          font: 'Hey',
+                          color: Colors.red,
+                        ),
+                        Container(
                           height: 3,
                           width: ref.watch(selectedPage) == index ? 80 : 0,
                           margin: const EdgeInsets.only(top: 4),
@@ -89,7 +86,9 @@ class _PageSelectorState extends ConsumerState<PageSelector> {
                       ],
                     ),
                   );
-                })),
+                },
+              ),
+            ),
           );
   }
 }

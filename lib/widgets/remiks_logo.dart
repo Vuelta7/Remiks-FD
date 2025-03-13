@@ -13,6 +13,7 @@ class RemiksLogo extends StatelessWidget {
         children: [
           Positioned(
             top: 3,
+            left: 1,
             child: ColorFiltered(
               colorFilter: ColorFilter.mode(Colors.red[900]!, BlendMode.srcIn),
               child: Image.asset(

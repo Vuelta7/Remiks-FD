@@ -15,7 +15,17 @@ class HomePage extends StatelessWidget {
           children: [
             IntroSection(),
             ProductSection(),
-            RemiksFooter(),
+            Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  colorFilter: ColorFilter.mode(
+                      Colors.yellow[700]!, BlendMode.hardLight),
+                  image: NetworkImage('assets/background_intro_raw.webp'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: RemiksFooter(),
+            )
           ],
         ),
       ),

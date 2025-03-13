@@ -22,13 +22,14 @@ class IntroSection extends StatelessWidget {
             fontSize: isMobileWeb(context) ? 35 : 40,
             text: 'Sarap up to\nthe last drop',
             font: 'Bitshow',
-            color: Colors.red,
+            color: Colors.white,
+            offset: Offset(3, 3),
           ),
           RemiksText(
             fontSize: isMobileWeb(context) ? 35 : 40,
             text: 'Sarap up to\nthe last drop',
             font: 'Hey',
-            color: Colors.red,
+            color: Colors.white,
           ),
           SizedBox(
             child: MenuButton(text: 'Order Now'),

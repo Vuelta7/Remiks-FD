@@ -50,15 +50,7 @@ class RemiksFooter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          colorFilter:
-              ColorFilter.mode(Colors.yellow[700]!, BlendMode.hardLight),
-          image: NetworkImage('assets/background_intro_raw.webp'),
-          fit: BoxFit.cover,
-        ),
-      ),
+    return SizedBox(
       height: 300,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
