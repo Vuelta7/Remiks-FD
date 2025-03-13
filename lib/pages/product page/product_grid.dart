@@ -21,14 +21,14 @@ class _ProductGridState extends State<ProductGrid> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 1600,
+      height: isMobileWeb(context) ? 3100 : 1700,
       child: Padding(
-        padding: const EdgeInsets.all(40.0),
+        padding: EdgeInsets.all(isMobileWeb(context) ? 10 : 40),
         child: GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3,
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: isMobileWeb(context) ? 1 : 3,
+            crossAxisSpacing: 30,
+            mainAxisSpacing: 30,
             childAspectRatio: 0.8,
           ),
           itemCount: products.length,
@@ -51,9 +51,11 @@ class _ProductGridState extends State<ProductGrid> {
                       borderRadius: BorderRadius.circular(20),
                       boxShadow: [
                         BoxShadow(
-                          offset: Offset(3, 3),
+                          offset: isMobileWeb(context)
+                              ? Offset(1, 1)
+                              : Offset(3, 3),
                           color: Colors.red[900]!,
-                          blurRadius: 3,
+                          blurRadius: isMobileWeb(context) ? 6 : 3,
                         ),
                       ],
                     ),

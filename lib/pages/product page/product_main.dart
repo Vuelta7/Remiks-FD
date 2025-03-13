@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:remiksweb/pages/product%20page/product_grid.dart';
+import 'package:remiksweb/utils.dart';
 import 'package:remiksweb/widgets/remiks_footer.dart';
 import 'package:remiksweb/widgets/remiks_navbar.dart';
 import 'package:remiksweb/widgets/remiks_text.dart';
@@ -24,7 +25,7 @@ class ProductPage extends StatelessWidget {
             children: [
               const RemiksNavbar(),
               RemiksText(
-                fontSize: 80,
+                fontSize: isMobileWeb(context) ? 30 : 80,
                 text: 'Our Products!',
                 font: 'Bitshow',
                 color: Colors.white,
