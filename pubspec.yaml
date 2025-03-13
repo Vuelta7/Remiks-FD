@@ -44,6 +44,7 @@ flutter:
     - assets/facebook.png
     - assets/background_intro_raw.webp
     - assets/remiks_vision.webp
+    - assets/banner.png
 
   fonts:
     - family: Roboto

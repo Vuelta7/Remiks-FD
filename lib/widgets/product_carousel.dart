@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:remiksweb/utils.dart';
+import 'package:remiksweb/widgets/remiks_text.dart';
 
 class ProductCarousel extends StatefulWidget {
   const ProductCarousel({super.key});
@@ -62,14 +63,11 @@ class _ProductCarouselState extends State<ProductCarousel> {
                     products[index]['image'],
                     width: 200,
                   ),
-                  Text(
-                    products[index]['name'],
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Soft'),
-                  ),
+                  RemiksText(
+                      fontSize: 30,
+                      text: products[index]['name'],
+                      font: 'Soft',
+                      color: Colors.red),
                   SizedBox(height: 10),
                   Text(
                     products[index]['description'],
