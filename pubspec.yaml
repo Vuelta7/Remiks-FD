@@ -21,6 +21,7 @@ dependencies:
   flutter_osm_plugin: ^1.3.6
   flutter_map: ^8.1.1
   latlong2: ^0.9.1
+  flutter_map_cancellable_tile_provider: ^3.1.0
 
 dev_dependencies:
   flutter_test:
@@ -45,6 +46,7 @@ flutter:
     - assets/background_intro_raw.webp
     - assets/remiks_vision.webp
     - assets/banner.png
+    - assets/remiks_about_us.webp
 
   fonts:
     - family: Roboto
