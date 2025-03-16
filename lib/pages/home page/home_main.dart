@@ -9,24 +9,23 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.orange,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            IntroSection(),
-            ProductSection(),
-            Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  colorFilter: ColorFilter.mode(
-                      Colors.yellow[700]!, BlendMode.hardLight),
-                  image: NetworkImage('assets/background_intro_raw.webp'),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              child: RemiksFooter(),
-            )
-          ],
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            colorFilter:
+                ColorFilter.mode(Colors.yellow[700]!, BlendMode.hardLight),
+            image: NetworkImage('assets/background_intro_raw.webp'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              IntroSection(),
+              ProductSection(),
+              RemiksFooter(),
+            ],
+          ),
         ),
       ),
     );

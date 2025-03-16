@@ -7,8 +7,7 @@ class ProductSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Color.fromARGB(255, 138, 13, 11),
+    return Padding(
       padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
       child: Column(
         children: [
