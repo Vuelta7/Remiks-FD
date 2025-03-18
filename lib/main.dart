@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:go_router/go_router.dart';
 import 'package:remiksweb/pages/about%20us%20page/about_us_main.dart';
 import 'package:remiksweb/pages/contact%20page.dart/contact_main.dart';
@@ -8,6 +9,7 @@ import 'package:remiksweb/pages/product%20page/product_main.dart';
 import 'package:remiksweb/splash_page.dart';
 
 void main() {
+  usePathUrlStrategy();
   runApp(
     ProviderScope(
       child: MyApp(),

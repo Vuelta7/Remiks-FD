@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:remiksweb/utils.dart';
 
 class SplashPage extends StatefulWidget {
@@ -52,7 +53,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
 
     _loadingController.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
-        Navigator.pushNamed(context, '/Home');
+        GoRouter.of(context).go('/home');
       }
     });
   }
