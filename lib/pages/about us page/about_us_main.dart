@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:remiksweb/widgets/location_map.dart';
 import 'package:remiksweb/widgets/remiks_about.dart';
 import 'package:remiksweb/widgets/remiks_footer.dart';
 import 'package:remiksweb/widgets/remiks_navbar.dart';
@@ -23,6 +24,19 @@ class AboutUsMain extends StatelessWidget {
             children: [
               RemiksNavbar(),
               RemiksAbout(),
+              Container(
+                height: 500,
+                width: 1400,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.red[900]!,
+                      blurRadius: 7,
+                    ),
+                  ],
+                ),
+                child: ShopLocationMap(),
+              ),
               RemiksFooter(),
             ],
           ),

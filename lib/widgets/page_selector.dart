@@ -12,13 +12,7 @@ class PageSelector extends ConsumerStatefulWidget {
 }
 
 class _PageSelectorState extends ConsumerState<PageSelector> {
-  final List<String> menuItems = [
-    'Home',
-    'Products',
-    'Locations',
-    'Contacts',
-    'About Us'
-  ];
+  final List<String> menuItems = ['Home', 'Products', 'Contacts', 'About Us'];
   @override
   Widget build(BuildContext context) {
     return isMobileWeb(context)
@@ -46,7 +40,7 @@ class _PageSelectorState extends ConsumerState<PageSelector> {
             ),
           )
         : SizedBox(
-            width: 600,
+            width: 450,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: List.generate(
