@@ -13,7 +13,7 @@ class RemiksIcon extends StatelessWidget {
       size: 50,
       shadows: [
         Shadow(
-          offset: Offset(1, 1),
+          offset: Offset(2, 2),
           color: Colors.red[900]!,
           blurRadius: 0,
         ),

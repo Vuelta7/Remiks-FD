@@ -42,7 +42,7 @@ class _ProductCarouselState extends State<ProductCarousel> {
         return Container(
           width: 400,
           decoration: BoxDecoration(
-            color: isCentered ? Colors.red : Colors.transparent,
+            color: isCentered ? Colors.orange : Colors.transparent,
             borderRadius: BorderRadius.circular(25),
             boxShadow: [
               BoxShadow(
