@@ -26,7 +26,7 @@ class _PageSelectorState extends ConsumerState<PageSelector> {
         ? PopupMenuButton<String>(
             icon: MenuButton(text: 'MENU'),
             onSelected: (String route) {
-              context.go(route); // Use GoRouter for navigation
+              context.go(route);
             },
             itemBuilder: (BuildContext context) => menuItems.map((item) {
               return PopupMenuItem<String>(

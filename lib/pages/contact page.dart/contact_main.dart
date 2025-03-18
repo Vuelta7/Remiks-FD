@@ -39,7 +39,7 @@ class ContactsPage extends StatelessWidget {
                   ),
                 ],
               ),
-              RemiksFooter(),
+              RemiksFooter(), //TODO: add feedbacks
             ],
           ),
         ),

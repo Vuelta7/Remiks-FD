@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class RemiksFB extends StatelessWidget {
   const RemiksFB({super.key});
-
+  // TODO: make for mobile
   @override
   Widget build(BuildContext context) {
     return SizedBox(

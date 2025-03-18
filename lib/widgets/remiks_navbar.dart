@@ -9,6 +9,7 @@ class RemiksNavbar extends StatefulWidget {
   State<RemiksNavbar> createState() => _RemiksNavbarState();
 }
 
+//TODO: sizing for mobile
 class _RemiksNavbarState extends State<RemiksNavbar> {
   @override
   Widget build(BuildContext context) {
