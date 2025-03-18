@@ -15,7 +15,7 @@ class AboutUsMain extends StatelessWidget {
             image: DecorationImage(
               colorFilter:
                   ColorFilter.mode(Colors.yellow[700]!, BlendMode.hardLight),
-              image: NetworkImage('assets/background_intro_raw.webp'),
+              image: AssetImage('assets/background_intro_raw.webp'),
               fit: BoxFit.cover,
             ),
           ),
