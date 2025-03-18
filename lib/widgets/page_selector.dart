@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:remiksweb/utils.dart';
 import 'package:remiksweb/widgets/navbar_button.dart';
 import 'package:remiksweb/widgets/remiks_text.dart';
@@ -12,76 +13,74 @@ class PageSelector extends ConsumerStatefulWidget {
 }
 
 class _PageSelectorState extends ConsumerState<PageSelector> {
-  final List<String> menuItems = ['Home', 'Products', 'Contacts', 'About Us'];
+  final List<Map<String, String>> menuItems = [
+    {'title': 'Home', 'route': '/home'},
+    {'title': 'Products', 'route': '/products'},
+    {'title': 'Contacts', 'route': '/contacts'},
+    {'title': 'About Us', 'route': '/about-us'},
+  ];
+
   @override
   Widget build(BuildContext context) {
     return isMobileWeb(context)
         ? PopupMenuButton<String>(
-            icon: MenuButton(
-              text: 'MENU',
-            ),
-            onSelected: (String result) {
-              Navigator.pushNamed(context, '/$result');
+            icon: MenuButton(text: 'MENU'),
+            onSelected: (String route) {
+              context.go(route); // Use GoRouter for navigation
             },
-            itemBuilder: (BuildContext context) => List.generate(
-              menuItems.length,
-              (index) => PopupMenuItem<String>(
-                value: menuItems[index],
+            itemBuilder: (BuildContext context) => menuItems.map((item) {
+              return PopupMenuItem<String>(
+                value: item['route'],
                 child: RemiksText(
                   fontSize: 20,
-                  text: menuItems[index],
+                  text: item['title']!,
                   font: 'Bitshow',
                   color: Colors.red,
                 ),
-                onTap: () {
-                  Navigator.pushNamed(context, '/${menuItems[index]}');
-                },
-              ),
-            ),
+              );
+            }).toList(),
           )
         : SizedBox(
             width: 450,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: List.generate(
-                menuItems.length,
-                (index) {
-                  return GestureDetector(
-                    onTap: () {
-                      ref.read(selectedPage.notifier).state = index;
-                      Navigator.pushNamed(context, '/${menuItems[index]}');
-                    },
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        RemiksText(
-                          fontSize: 25,
-                          text: menuItems[index],
-                          font: 'Hey',
-                          color: Colors.red,
+              children: menuItems.map((item) {
+                int index = menuItems.indexOf(item);
+                return GestureDetector(
+                  onTap: () {
+                    ref.read(selectedPage.notifier).state = index;
+                    context.go(item['route']!);
+                  },
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      RemiksText(
+                        fontSize: 25,
+                        text: item['title']!,
+                        font: 'Hey',
+                        color: Colors.red,
+                      ),
+                      Container(
+                        height: 3,
+                        width: ref.watch(selectedPage) == index ? 80 : 0,
+                        margin: const EdgeInsets.only(top: 4),
+                        decoration: BoxDecoration(
+                          color: ref.watch(selectedPage) == index
+                              ? Colors.red
+                              : Colors.transparent,
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.red[900]!,
+                              offset: const Offset(2, 2),
+                              blurRadius: 0,
+                            ),
+                          ],
                         ),
-                        Container(
-                          height: 3,
-                          width: ref.watch(selectedPage) == index ? 80 : 0,
-                          margin: const EdgeInsets.only(top: 4),
-                          decoration: BoxDecoration(
-                            color: ref.watch(selectedPage) == index
-                                ? Colors.red
-                                : Colors.transparent,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.red[900]!,
-                                offset: Offset(2, 2),
-                                blurRadius: 0,
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  );
-                },
-              ),
+                      ),
+                    ],
+                  ),
+                );
+              }).toList(),
             ),
           );
   }
