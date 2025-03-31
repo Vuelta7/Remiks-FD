@@ -16,7 +16,7 @@ void main() {
     ),
   );
 }
-
+// TODO: fix 
 final GoRouter _router = GoRouter(
   routerNeglect: true,
   initialLocation: '/',
