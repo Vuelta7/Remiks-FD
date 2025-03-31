@@ -4,7 +4,6 @@
   <base href="/">
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- SEO Meta Tags -->
   <meta name="description" content="Remiks FD offers homemade Filipino condiments, including chili garlic and bagoong. Taste the best homemade flavors today!">
@@ -29,6 +28,11 @@
 
   <!-- External Scripts -->
   <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlv78GSegFhJVcedgza0D38f4f6k8adOc"></script>
+  <script>
+    if (performance.navigation.type === 1) {
+      window.location.href = "/";
+    }
+  </script>  
   
   <title>Remiks FD - Homemade Filipino Condiments</title>
   <link rel="manifest" href="/manifest.json">
