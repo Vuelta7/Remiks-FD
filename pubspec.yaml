@@ -51,6 +51,7 @@ flutter:
     - assets/fb_page.png
     - assets/effectbg.json
     - assets/remiks_logo.ico
+    - assets/remiks_logo.webp
 
   fonts:
     - family: Roboto
