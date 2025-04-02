@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:remiksweb/utils.dart';
-import 'package:remiksweb/widgets/navbar_button.dart';
-import 'package:remiksweb/widgets/remiks_text.dart';
+import 'package:remiksweb/pages/widgets/navbar_button.dart';
+import 'package:remiksweb/pages/widgets/remiks_text.dart';
+import 'package:remiksweb/utils/utils.dart';
 
 class PageSelector extends ConsumerStatefulWidget {
   const PageSelector({super.key});
@@ -17,7 +17,6 @@ class _PageSelectorState extends ConsumerState<PageSelector> {
     {'title': 'Home', 'route': '/home'},
     {'title': 'Products', 'route': '/products'},
     {'title': 'Contacts', 'route': '/contacts'},
-    {'title': 'About Us', 'route': '/about-us'},
   ];
 
   @override
@@ -41,7 +40,7 @@ class _PageSelectorState extends ConsumerState<PageSelector> {
             }).toList(),
           )
         : SizedBox(
-            width: 450,
+            width: 350,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: menuItems.map((item) {

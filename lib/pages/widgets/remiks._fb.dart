@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:remiksweb/utils/utils.dart';
 
 class RemiksFB extends StatelessWidget {
   const RemiksFB({super.key});
-  // TODO: make for mobile
+
   @override
   Widget build(BuildContext context) {
+    final image =
+        isMobileWeb(context) ? 'assets/fb_mobile.webp' : 'assets/facebook.webp';
+
     return SizedBox(
       height: 410,
-      width: 810,
+      width: isMobileWeb(context) ? 280 : 810,
       child: Stack(
         children: [
           Positioned(
@@ -16,23 +20,14 @@ class RemiksFB extends StatelessWidget {
             child: ColorFiltered(
               colorFilter: ColorFilter.mode(Colors.red[900]!, BlendMode.srcIn),
               child: Image.asset(
-                'assets/fb_page.png',
+                image,
                 height: 400,
               ),
             ),
           ),
           Image.asset(
-            'assets/fb_page.png',
+            image,
             height: 400,
-          ),
-          Positioned(
-            top: 355,
-            left: 140,
-            child: Container(
-              width: 160,
-              height: 30,
-              color: Color.fromARGB(255, 37, 39, 40),
-            ),
           ),
         ],
       ),

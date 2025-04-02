@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:remiksweb/widgets/page_selector.dart';
-import 'package:remiksweb/widgets/remiks_logo.dart';
+import 'package:remiksweb/pages/widgets/page_selector.dart';
+import 'package:remiksweb/pages/widgets/remiks_logo.dart';
 
 class RemiksNavbar extends StatefulWidget {
   const RemiksNavbar({super.key});
@@ -9,7 +9,6 @@ class RemiksNavbar extends StatefulWidget {
   State<RemiksNavbar> createState() => _RemiksNavbarState();
 }
 
-//TODO: sizing for mobile
 class _RemiksNavbarState extends State<RemiksNavbar> {
   @override
   Widget build(BuildContext context) {

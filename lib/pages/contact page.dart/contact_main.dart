@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:remiksweb/widgets/remiks._fb.dart';
-import 'package:remiksweb/widgets/remiks_footer.dart';
-import 'package:remiksweb/widgets/remiks_icon.dart';
-import 'package:remiksweb/widgets/remiks_navbar.dart';
-import 'package:remiksweb/widgets/remiks_text.dart';
+import 'package:remiksweb/pages/widgets/location_map.dart';
+import 'package:remiksweb/pages/widgets/remiks._fb.dart';
+import 'package:remiksweb/pages/widgets/remiks_footer.dart';
+import 'package:remiksweb/pages/widgets/remiks_icon.dart';
+import 'package:remiksweb/pages/widgets/remiks_navbar.dart';
+import 'package:remiksweb/pages/widgets/remiks_text.dart';
 
 class ContactsPage extends StatelessWidget {
   const ContactsPage({super.key});
@@ -22,6 +23,7 @@ class ContactsPage extends StatelessWidget {
             ),
           ),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               RemiksNavbar(),
               RemiksFB(),
@@ -38,6 +40,19 @@ class ContactsPage extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ],
+              ),
+              Container(
+                height: 500,
+                width: 500,
+                decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.red[900]!,
+                      blurRadius: 10,
+                    ),
+                  ],
+                ),
+                child: ShopLocationMap(),
               ),
               RemiksFooter(), //TODO: add feedbacks
             ],

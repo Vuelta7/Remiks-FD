@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:remiksweb/pages/product%20page/product_grid.dart';
-import 'package:remiksweb/utils.dart';
-import 'package:remiksweb/widgets/remiks_footer.dart';
-import 'package:remiksweb/widgets/remiks_navbar.dart';
-import 'package:remiksweb/widgets/remiks_text.dart';
+import 'package:remiksweb/pages/widgets/remiks_footer.dart';
+import 'package:remiksweb/pages/widgets/remiks_navbar.dart';
+import 'package:remiksweb/pages/widgets/remiks_text.dart';
+import 'package:remiksweb/utils/utils.dart';
 
 class ProductPage extends StatelessWidget {
   const ProductPage({super.key});

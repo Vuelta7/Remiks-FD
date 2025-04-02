@@ -5,7 +5,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart';
 
 bool isMobileWeb(BuildContext context) {
-  return kIsWeb && MediaQuery.of(context).size.width < 1200;
+  return kIsWeb && MediaQuery.of(context).size.width < 800;
 }
 
 Color getShade(Color color, int shade) {

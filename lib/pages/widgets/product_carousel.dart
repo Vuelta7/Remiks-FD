@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:remiksweb/utils.dart';
-import 'package:remiksweb/widgets/remiks_text.dart';
+import 'package:remiksweb/pages/widgets/remiks_text.dart';
+import 'package:remiksweb/utils/utils.dart';
 
 class ProductCarousel extends StatefulWidget {
   const ProductCarousel({super.key});
