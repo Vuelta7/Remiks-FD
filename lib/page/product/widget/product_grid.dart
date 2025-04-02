@@ -26,10 +26,11 @@ class _ProductGridState extends State<ProductGrid> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(isMobileWeb(context) ? 10 : 40),
+      padding:
+          EdgeInsets.symmetric(horizontal: isMobileWeb(context) ? 10 : 400),
       child: GridView.builder(
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: isMobileWeb(context) ? 1 : 3,
+          crossAxisCount: isMobileWeb(context) ? 2 : 3,
           crossAxisSpacing: 30,
           mainAxisSpacing: 30,
           childAspectRatio: 0.8,
@@ -79,10 +80,10 @@ class _ProductGridState extends State<ProductGrid> {
                           child: Column(
                             children: [
                               RemiksText(
-                                fontSize: 30,
+                                fontSize: 15,
                                 text: product['name'],
                                 font: 'Soft',
-                                color: Colors.red,
+                                color: Colors.white,
                               ),
                             ],
                           ),

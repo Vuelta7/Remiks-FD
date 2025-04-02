@@ -58,6 +58,7 @@ class _ProductPageState extends State<ProductPage> {
                 )
               else
                 ProductGrid(onProductSelect: selectProduct),
+              const SizedBox(height: 20),
               RemiksText(
                 fontSize: 30,
                 text: 'Sarap up to the last drop!',
