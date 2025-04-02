@@ -64,7 +64,7 @@ class _ProductCarouselState extends State<ProductCarousel> {
                     width: 220,
                   ),
                   RemiksText(
-                    fontSize: 30,
+                    fontSize: 25,
                     text: products[index]['name'],
                     font: 'Soft',
                     color: Colors.red,

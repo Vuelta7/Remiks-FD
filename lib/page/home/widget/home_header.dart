@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:remiksweb/core/utils.dart';
 import 'package:remiksweb/core/widgets/navbar_button.dart';
 import 'package:remiksweb/core/widgets/remiks_navbar.dart';
 import 'package:remiksweb/core/widgets/remiks_text.dart';
 import 'package:remiksweb/page/home/widget/product_showcase.dart';
 
-class IntroSection extends StatelessWidget {
+class IntroSection extends ConsumerWidget {
   const IntroSection({super.key});
 
-  List<Widget> _buildIntroContent(BuildContext context) {
+  List<Widget> _buildIntroContent(BuildContext context, ref) {
     return [
       SizedBox(
         width: 200,
@@ -25,14 +27,22 @@ class IntroSection extends StatelessWidget {
             color: Colors.white,
             offset: Offset(3, 3),
           ),
-          RemiksText(
-            fontSize: isMobileWeb(context) ? 35 : 40,
-            text: 'Sarap up to\nthe last drop',
-            font: 'Hey',
-            color: Colors.white,
-          ),
           SizedBox(
-            child: MenuButton(text: 'Order Now'),
+            width: 350,
+            child: RemiksText(
+              fontSize: 25,
+              text:
+                  'Taste our very own HOME MADE REMIKS products! message us for inquiries. We will be glad to assist you.',
+              font: 'Hey',
+              color: Colors.white,
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              ref.read(selectedPage.notifier).state = 2;
+              context.go('/contacts');
+            },
+            child: MenuButton(text: 'Contact Us'),
           ),
         ],
       ),
@@ -40,7 +50,7 @@ class IntroSection extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return SizedBox(
       height: MediaQuery.of(context).size.height,
       child: Column(
@@ -49,13 +59,13 @@ class IntroSection extends StatelessWidget {
           isMobileWeb(context)
               ? Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: _buildIntroContent(context),
+                  children: _buildIntroContent(context, ref),
                 )
               : Padding(
                   padding: const EdgeInsets.fromLTRB(0, 100, 0, 0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: _buildIntroContent(context),
+                    children: _buildIntroContent(context, ref),
                   ),
                 )
         ],

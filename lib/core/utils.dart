@@ -30,45 +30,46 @@ const List<Map<String, dynamic>> products = [
   {
     'image': 'assets/chicken_pastil.png',
     'name': 'Chicken Pastil',
-    'description': 'Pogi ako',
-    'price': '₱90',
+    'description':
+        'authentic, flavorful shredded chicken cooked in rich spices, ready to enjoy anytime.',
+    'price': '₱170',
     'bgColor': Colors.orange
   },
   {
     'image': 'assets/chili_garlic.png',
     'name': 'Chili Garlic',
     'description':
-        'lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem ',
-    'price': '₱90',
+        'spicy blend of garlic and chili for an irresistible kick to any dish.',
+    'price': '₱110',
     'bgColor': Colors.orange
   },
   {
     'image': 'assets/ginisang_alamang.png',
     'name': 'Ginisang Alamang',
-    'description': 'Pogi ako',
+    'description':
+        'A savory blend of fermented shrimp, perfect for dips, rice, and cooking.',
     'price': '₱90',
     'bgColor': Colors.orange
   },
   {
     'image': 'assets/hot_sauce.png',
     'name': 'Hot Sauce',
-    'description': 'Pogi ako',
-    'price': '₱90',
+    'description': 'A perfect balance of heat and taste for chili lovers.',
+    'price': '₱170',
     'bgColor': Colors.orange
   },
   {
     'image': 'assets/sawsaw_suka.png',
     'name': 'Saw Saw Suka',
-    'description':
-        'Pogi ako Pogi akoPogi akoPogi akoPogi akoPogi akoPogi akoPogi akoPogi akoPogi ako',
-    'price': '₱90',
+    'description': 'A Filipino classic vinegar dip.',
+    'price': '₱95',
     'bgColor': Colors.orange
   },
   {
     'image': 'assets/chili_shots.png',
     'name': 'Chili Shots',
-    'description': 'Pogi ako',
-    'price': '₱90',
+    'description': 'The ultimate way to enjoy spicy heat in a single shot.',
+    'price': '₱70',
     'bgColor': Colors.orange
   },
 ];
