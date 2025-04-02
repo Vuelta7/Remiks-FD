@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:remiksweb/pages/widgets/navbar_button.dart';
-import 'package:remiksweb/pages/widgets/remiks_text.dart';
-import 'package:remiksweb/utils/utils.dart';
+import 'package:remiksweb/core/utils.dart';
+import 'package:remiksweb/core/widgets/navbar_button.dart';
+import 'package:remiksweb/core/widgets/remiks_text.dart';
 
 class PageSelector extends ConsumerStatefulWidget {
   const PageSelector({super.key});

@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:remiksweb/utils/utils.dart';
+import 'package:remiksweb/core/utils.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});

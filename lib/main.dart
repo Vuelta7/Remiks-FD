@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:go_router/go_router.dart';
-import 'package:remiksweb/pages/contact%20page.dart/contact_main.dart';
-import 'package:remiksweb/pages/home%20page/home_main.dart';
-import 'package:remiksweb/pages/product%20page/product_main.dart';
-import 'package:remiksweb/utils/splash_page.dart';
+import 'package:remiksweb/core/widgets/splash_page.dart';
+import 'package:remiksweb/page/contact/contact_main.dart';
+import 'package:remiksweb/page/home/home_main.dart';
+import 'package:remiksweb/page/product/product_main.dart';
 
 void main() {
   usePathUrlStrategy();

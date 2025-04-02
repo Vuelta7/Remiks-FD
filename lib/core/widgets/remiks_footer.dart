@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:remiksweb/pages/widgets/page_selector.dart';
-import 'package:remiksweb/pages/widgets/remiks_icon.dart';
-import 'package:remiksweb/pages/widgets/remiks_logo.dart';
-import 'package:remiksweb/utils/utils.dart';
+import 'package:remiksweb/core/utils.dart';
+import 'package:remiksweb/core/widgets/page_selector.dart';
+import 'package:remiksweb/core/widgets/remiks_icon.dart';
+import 'package:remiksweb/core/widgets/remiks_logo.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class RemiksFooter extends StatelessWidget {

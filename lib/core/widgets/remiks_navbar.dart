@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:remiksweb/pages/widgets/page_selector.dart';
-import 'package:remiksweb/pages/widgets/remiks_logo.dart';
+import 'package:remiksweb/core/widgets/page_selector.dart';
+import 'package:remiksweb/core/widgets/remiks_logo.dart';
 
 class RemiksNavbar extends StatefulWidget {
   const RemiksNavbar({super.key});

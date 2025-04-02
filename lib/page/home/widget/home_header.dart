@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:remiksweb/pages/widgets/navbar_button.dart';
-import 'package:remiksweb/pages/widgets/product_showcase.dart';
-import 'package:remiksweb/pages/widgets/remiks_navbar.dart';
-import 'package:remiksweb/pages/widgets/remiks_text.dart';
-import 'package:remiksweb/utils/utils.dart';
+import 'package:remiksweb/core/utils.dart';
+import 'package:remiksweb/core/widgets/navbar_button.dart';
+import 'package:remiksweb/core/widgets/remiks_navbar.dart';
+import 'package:remiksweb/core/widgets/remiks_text.dart';
+import 'package:remiksweb/page/home/widget/product_showcase.dart';
 
 class IntroSection extends StatelessWidget {
   const IntroSection({super.key});

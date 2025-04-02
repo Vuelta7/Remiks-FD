@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:remiksweb/pages/widgets/location_map.dart';
-import 'package:remiksweb/pages/widgets/remiks._fb.dart';
-import 'package:remiksweb/pages/widgets/remiks_footer.dart';
-import 'package:remiksweb/pages/widgets/remiks_icon.dart';
-import 'package:remiksweb/pages/widgets/remiks_navbar.dart';
-import 'package:remiksweb/pages/widgets/remiks_text.dart';
+import 'package:remiksweb/core/widgets/remiks_footer.dart';
+import 'package:remiksweb/core/widgets/remiks_icon.dart';
+import 'package:remiksweb/core/widgets/remiks_navbar.dart';
+import 'package:remiksweb/core/widgets/remiks_text.dart';
+import 'package:remiksweb/page/contact/widget/location_map.dart';
+import 'package:remiksweb/page/contact/widget/remiks._fb.dart';
 
 class ContactsPage extends StatelessWidget {
   const ContactsPage({super.key});
