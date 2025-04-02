@@ -48,7 +48,6 @@ flutter:
     - assets/background_intro_raw.webp
     - assets/remiks_vision.webp
     - assets/banner.png
-    - assets/effectbg.json
     - web/favicon.ico
     - assets/fb_mobile.webp
 

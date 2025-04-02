@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:remiksweb/core/widgets/navbar_button.dart';
 import 'package:remiksweb/core/widgets/remiks_footer.dart';
 import 'package:remiksweb/core/widgets/remiks_icon.dart';
 import 'package:remiksweb/core/widgets/remiks_navbar.dart';
 import 'package:remiksweb/core/widgets/remiks_text.dart';
-import 'package:remiksweb/page/contact/widget/location_map.dart';
-import 'package:remiksweb/page/contact/widget/remiks._fb.dart';
+import 'package:remiksweb/page/contacts/widget/remiks._fb.dart';
+import 'package:remiksweb/page/contacts/widget/remiks_location.dart';
 
 class ContactsPage extends StatelessWidget {
   const ContactsPage({super.key});
@@ -27,32 +29,31 @@ class ContactsPage extends StatelessWidget {
             children: [
               RemiksNavbar(),
               RemiksFB(),
+              SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  RemiksIcon(
-                    icon: Icons.facebook_rounded,
-                  ),
+                  RemiksIcon(icon: Icons.facebook_rounded),
+                  SizedBox(width: 10),
                   RemiksText(
                     fontSize: 20,
-                    text: 'Message us on our Facebook Page',
+                    text: 'Message us on our\nFacebook Page',
                     font: 'Bitshow',
                     color: Colors.white,
                   ),
                 ],
               ),
-              Container(
-                height: 500,
-                width: 500,
-                decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.red[900]!,
-                      blurRadius: 10,
-                    ),
-                  ],
+              SizedBox(height: 20),
+              RemiksLocation(),
+              SizedBox(height: 20),
+              GestureDetector(
+                onTap: () {
+                  context.push('/location');
+                },
+                child: MenuButton(
+                  text: 'Show Full Map',
+                  width: 200,
                 ),
-                child: ShopLocationMap(),
               ),
               RemiksFooter(), //TODO: add feedbacks
             ],

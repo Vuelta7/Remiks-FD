@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 
 class MenuButton extends StatelessWidget {
   final String text;
-  const MenuButton({super.key, required this.text});
+  final double width;
+  final double height;
+  const MenuButton(
+      {super.key, required this.text, this.width = 100, this.height = 50});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 100,
-      height: 50,
+      width: width,
+      height: height,
       child: Padding(
         padding: const EdgeInsets.only(top: 5.0),
         child: Stack(
@@ -16,8 +19,8 @@ class MenuButton extends StatelessWidget {
             Positioned(
               top: 4,
               child: Container(
-                width: 100,
-                height: 35,
+                width: width,
+                height: height - 15,
                 decoration: BoxDecoration(
                   color: Colors.red[900],
                   borderRadius: BorderRadius.circular(20),
@@ -25,8 +28,8 @@ class MenuButton extends StatelessWidget {
               ),
             ),
             Container(
-              width: 100,
-              height: 35,
+              width: width,
+              height: height - 15,
               decoration: BoxDecoration(
                 color: Colors.red,
                 borderRadius: BorderRadius.circular(20),

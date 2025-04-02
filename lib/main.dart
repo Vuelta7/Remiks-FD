@@ -3,7 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:go_router/go_router.dart';
 import 'package:remiksweb/core/widgets/splash_page.dart';
-import 'package:remiksweb/page/contact/contact_main.dart';
+import 'package:remiksweb/page/contacts/contact_main.dart';
+import 'package:remiksweb/page/contacts/widget/location_page.dart';
 import 'package:remiksweb/page/home/home_main.dart';
 import 'package:remiksweb/page/product/product_main.dart';
 
@@ -36,6 +37,10 @@ final GoRouter _router = GoRouter(
     GoRoute(
       path: '/contacts',
       builder: (context, state) => const ContactsPage(),
+    ),
+    GoRoute(
+      path: '/location',
+      builder: (context, state) => const LocationPage(),
     ),
   ],
 );

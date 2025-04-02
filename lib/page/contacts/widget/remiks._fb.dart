@@ -10,8 +10,8 @@ class RemiksFB extends StatelessWidget {
         isMobileWeb(context) ? 'assets/fb_mobile.webp' : 'assets/facebook.webp';
 
     return SizedBox(
-      height: 410,
-      width: isMobileWeb(context) ? 280 : 810,
+      width: isMobileWeb(context) ? 340 : 820,
+      height: isMobileWeb(context) ? 500 : 460,
       child: Stack(
         children: [
           Positioned(
@@ -21,13 +21,15 @@ class RemiksFB extends StatelessWidget {
               colorFilter: ColorFilter.mode(Colors.red[900]!, BlendMode.srcIn),
               child: Image.asset(
                 image,
-                height: 400,
+                width: isMobileWeb(context) ? 330 : 810,
+                height: isMobileWeb(context) ? 490 : 450,
               ),
             ),
           ),
           Image.asset(
             image,
-            height: 400,
+            width: isMobileWeb(context) ? 330 : 810,
+            height: isMobileWeb(context) ? 490 : 450,
           ),
         ],
       ),
