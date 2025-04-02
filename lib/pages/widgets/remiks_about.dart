@@ -6,7 +6,7 @@ class RemiksAbout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 400,
+      width: 350,
       child: Center(
         child: Stack(
           children: [
@@ -18,14 +18,14 @@ class RemiksAbout extends StatelessWidget {
                     ColorFilter.mode(Colors.deepOrange, BlendMode.srcIn),
                 child: Image.asset(
                   'assets/remiks_vision.webp',
-                  width: 400,
+                  width: 350,
                   fit: BoxFit.cover,
                 ),
               ),
             ),
             Image.asset(
               'assets/remiks_vision.webp',
-              width: 400,
+              width: 350,
               fit: BoxFit.cover,
             ),
           ],

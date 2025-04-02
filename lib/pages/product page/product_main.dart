@@ -5,8 +5,27 @@ import 'package:remiksweb/pages/widgets/remiks_navbar.dart';
 import 'package:remiksweb/pages/widgets/remiks_text.dart';
 import 'package:remiksweb/utils/utils.dart';
 
-class ProductPage extends StatelessWidget {
+class ProductPage extends StatefulWidget {
   const ProductPage({super.key});
+
+  @override
+  State<ProductPage> createState() => _ProductPageState();
+}
+
+class _ProductPageState extends State<ProductPage> {
+  Map<String, dynamic>? selectedProduct;
+
+  void selectProduct(Map<String, dynamic> product) {
+    setState(() {
+      selectedProduct = product;
+    });
+  }
+
+  void clearSelection() {
+    setState(() {
+      selectedProduct = null;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +50,13 @@ class ProductPage extends StatelessWidget {
                 color: Colors.white,
                 offset: Offset(3, 3),
               ),
-              const ProductGrid(),
+              if (selectedProduct != null)
+                ProductOverview(
+                  product: selectedProduct!,
+                  onClose: clearSelection,
+                )
+              else
+                ProductGrid(onProductSelect: selectProduct),
               RemiksText(
                 fontSize: 30,
                 text: 'Sarap up to the last drop!',
