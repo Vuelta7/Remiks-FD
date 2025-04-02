@@ -30,7 +30,7 @@ class IntroSection extends ConsumerWidget {
           SizedBox(
             width: 350,
             child: RemiksText(
-              fontSize: 25,
+              fontSize: isMobileWeb(context) ? 18 : 25,
               text:
                   'Taste our very own HOME MADE REMIKS products! message us for inquiries. We will be glad to assist you.',
               font: 'Hey',

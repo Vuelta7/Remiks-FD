@@ -21,7 +21,7 @@ class _ProductCarouselState extends State<ProductCarousel> {
 
   CarouselOptions _buildCarouselOptions(BuildContext context) {
     return CarouselOptions(
-      height: 450,
+      height: 460,
       enlargeCenterPage: true,
       autoPlay: true,
       autoPlayInterval:
@@ -40,14 +40,14 @@ class _ProductCarouselState extends State<ProductCarousel> {
       itemBuilder: (context, index, realIndex) {
         bool isCentered = index == _currentIndex;
         return Container(
-          width: 400,
+          width: 600,
           decoration: BoxDecoration(
-            color: isCentered ? Colors.orange : Colors.transparent,
+            color: isCentered ? Colors.white : Colors.orange,
             borderRadius: BorderRadius.circular(25),
             boxShadow: [
               BoxShadow(
-                color: Color(0xFFFFDD45),
-                offset: Offset(0, 0),
+                color: Colors.red,
+                offset: Offset(3, 3),
               ),
             ],
           ),
@@ -64,17 +64,18 @@ class _ProductCarouselState extends State<ProductCarousel> {
                     width: 220,
                   ),
                   RemiksText(
-                    fontSize: 25,
+                    fontSize: isMobileWeb(context) ? 25 : 30,
                     text: products[index]['name'],
                     font: 'Soft',
                     color: Colors.red,
                   ),
                   SizedBox(height: 10),
                   RemiksText(
-                    fontSize: 15,
+                    fontSize: isMobileWeb(context) ? 15 : 20,
                     text: products[index]['description'],
                     font: 'Hey',
-                    color: Colors.white,
+                    color: Colors.red,
+                    offset: Offset(1, 1),
                   ),
                   SizedBox(height: 10),
                   RemiksText(

@@ -42,7 +42,10 @@ class HomePage extends ConsumerWidget {
                           ref.read(selectedPage.notifier).state = 1;
                           context.go('/products');
                         },
-                        child: ProductCarousel()),
+                        child: SizedBox(
+                          height: 570,
+                          child: ProductCarousel(),
+                        )),
                     SizedBox(
                       height: 10,
                     ),
