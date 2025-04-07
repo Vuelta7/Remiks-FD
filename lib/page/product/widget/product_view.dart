@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:remiksweb/core/utils.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProductOverview extends StatelessWidget {
   final Map<String, dynamic> product;
@@ -136,6 +137,25 @@ class ProductOverview extends StatelessWidget {
             color: Colors.red[900],
           ),
         ),
+        if (product['link'] != null)
+          Padding(
+            padding: const EdgeInsets.only(top: 16.0),
+            child: ElevatedButton(
+              onPressed: () async {
+                final url = Uri.parse(product['link']);
+                if (await canLaunchUrl(url)) {
+                  await launchUrl(url);
+                } else {
+                  throw 'Could not launch $url';
+                }
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red[900],
+                foregroundColor: Colors.white,
+              ),
+              child: Text('Buy Now'),
+            ),
+          ),
       ],
     );
   }

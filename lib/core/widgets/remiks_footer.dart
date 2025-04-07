@@ -34,13 +34,23 @@ class RemiksFooter extends StatelessWidget {
     }
   }
 
-  void _launchEmail() async {
-    final Uri params = Uri(
-      scheme: 'mailto',
-      path: 'remiksfd@gmail.com',
-      query: 'subject=Contact&body=Hello',
-    );
-    var url = params.toString();
+  // void _launchEmail() async {
+  //   final Uri params = Uri(
+  //     scheme: 'mailto',
+  //     path: 'remiksfd@gmail.com',
+  //     query: 'subject=Contact&body=Hello',
+  //   );
+  //   var url = params.toString();
+  //   if (await canLaunchUrl(Uri.parse(url))) {
+  //     await launchUrl(Uri.parse(url));
+  //   } else {
+  //     throw 'Could not launch $url';
+  //   }
+  // }
+
+  void _launchShop() async {
+    const url =
+        'https://www.lazada.com.ph/remiks-fd-food-trading/?q=All-Products&from=wangpu&langFlag=en&pageTypeId=2';
     if (await canLaunchUrl(Uri.parse(url))) {
       await launchUrl(Uri.parse(url));
     } else {
@@ -98,9 +108,9 @@ class RemiksFooter extends StatelessWidget {
         icon: RemiksIcon(icon: Icons.location_on),
       ),
       IconButton(
-        tooltip: 'Send Email to Remiks FD',
-        onPressed: _launchEmail,
-        icon: RemiksIcon(icon: Icons.email),
+        tooltip: 'Visit our Shop',
+        onPressed: _launchShop,
+        icon: RemiksIcon(icon: Icons.storefront_rounded),
       ),
     ];
   }
