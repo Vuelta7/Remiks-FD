@@ -52,6 +52,10 @@ flutter:
     - assets/fb_mobile.webp
     - assets/tiktok_shop.webp
     - assets/lazada_shop.webp
+    - assets/barako.webp
+    - assets/sagada.webp
+    - assets/barako_trans.webp
+    - assets/sagada_trans.webp
 
   fonts:
     - family: Roboto

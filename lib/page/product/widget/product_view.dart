@@ -118,7 +118,7 @@ class ProductOverview extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         Text(
-          product['description'],
+          product['longDescription'] ?? product['description'],
           style: GoogleFonts.poppins(fontSize: 14),
         ),
         const SizedBox(height: 16),

@@ -5,7 +5,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart';
 
 bool isMobileWeb(BuildContext context) {
-  return kIsWeb && MediaQuery.of(context).size.width < 800;
+  return kIsWeb && MediaQuery.of(context).size.width < 1000;
 }
 
 Color getShade(Color color, int shade) {
@@ -75,6 +75,30 @@ const List<Map<String, dynamic>> products = [
     'image': 'assets/chili_shots.png',
     'name': 'Chili Shots',
     'description': 'The ultimate way to enjoy spicy heat in a single shot.',
+    'price': '₱70',
+    'bgColor': Colors.orange,
+    'link':
+        'https://www.lazada.com.ph/products/remiks-chili-shots-150-ml-i1820981632-s7730867135.html?c=&channelLpJumpArgs=&clickTrackInfo=query%253A%253Bnid%253A1820981632%253Bsrc%253AlazadaInShopSrp%253Brn%253A42ed5ceadb3dd410cede07d0cd26f74a%253Bregion%253Aph%253Bsku%253A1820981632_PH%253Bprice%253A70%253Bclient%253Adesktop%253Bsupplier_id%253A500169201182%253Bbiz_source%253Ah5_internal%253Bslot%253A1%253Butlog_bucket_id%253A470687%253Basc_category_id%253A25406%253Bitem_id%253A1820981632%253Bsku_id%253A7730867135%253Bshop_id%253A1867516%253BtemplateInfo%253A107881_D_E%2523-1_A3_C%2523&freeshipping=1&fs_ab=2&fuse_fs=&lang=en&location=Bulacan&price=7E%201&priceCompare=skuId%3A7730867135%3Bsource%3Alazada-search-voucher-in-shop%3Bsn%3A42ed5ceadb3dd410cede07d0cd26f74a%3BoriginPrice%3A7000%3BdisplayPrice%3A7000%3BsinglePromotionId%3A-1%3BsingleToolCode%3A-1%3BvoucherPricePlugin%3A0%3Btimestamp%3A1743792861005&ratingscore=&request_id=42ed5ceadb3dd410cede07d0cd26f74a&review=&sale=5&search=1&spm=a2o4l.store_product.list.1&stock=1'
+  },
+  {
+    'image': 'assets/sagada_trans.webp',
+    'name': 'Sagada Coffee',
+    'description':
+        'A rich and aromatic coffee blend from the highlands of Sagada.',
+    'longDescription':
+        'Sagada Pure Arabica is Medium Roast Grown in the highlands of Sagada, these premium Arabica beans deliver a smooth, well-balanced cup with notes of chocolate, caramel, and citrus. Handpicked and sun-dried for a taste that’s rich, bold, and proudly local.',
+    'price': '₱70',
+    'bgColor': Colors.orange,
+    'link':
+        'https://www.lazada.com.ph/products/remiks-chili-shots-150-ml-i1820981632-s7730867135.html?c=&channelLpJumpArgs=&clickTrackInfo=query%253A%253Bnid%253A1820981632%253Bsrc%253AlazadaInShopSrp%253Brn%253A42ed5ceadb3dd410cede07d0cd26f74a%253Bregion%253Aph%253Bsku%253A1820981632_PH%253Bprice%253A70%253Bclient%253Adesktop%253Bsupplier_id%253A500169201182%253Bbiz_source%253Ah5_internal%253Bslot%253A1%253Butlog_bucket_id%253A470687%253Basc_category_id%253A25406%253Bitem_id%253A1820981632%253Bsku_id%253A7730867135%253Bshop_id%253A1867516%253BtemplateInfo%253A107881_D_E%2523-1_A3_C%2523&freeshipping=1&fs_ab=2&fuse_fs=&lang=en&location=Bulacan&price=7E%201&priceCompare=skuId%3A7730867135%3Bsource%3Alazada-search-voucher-in-shop%3Bsn%3A42ed5ceadb3dd410cede07d0cd26f74a%3BoriginPrice%3A7000%3BdisplayPrice%3A7000%3BsinglePromotionId%3A-1%3BsingleToolCode%3A-1%3BvoucherPricePlugin%3A0%3Btimestamp%3A1743792861005&ratingscore=&request_id=42ed5ceadb3dd410cede07d0cd26f74a&review=&sale=5&search=1&spm=a2o4l.store_product.list.1&stock=1'
+  },
+  {
+    'image': 'assets/barako_trans.webp',
+    'name': 'Barako Coffee',
+    'description':
+        'A strong and bold coffee blend from Batangas and Cavite, perfect for coffee lovers.',
+    'longDescription':
+        'Barako Pure Liberica is Dark Roast Bold, rich, and proudly Filipino. Grown in Batangas and Cavite, this dark roast Liberica delivers strong flavor with deep notes of molasses, dark chocolate, and spice. For coffee lovers who like it full-bodied and unforgettable.',
     'price': '₱70',
     'bgColor': Colors.orange,
     'link':

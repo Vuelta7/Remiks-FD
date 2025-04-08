@@ -5,6 +5,7 @@ import 'package:remiksweb/core/widgets/page_selector.dart';
 import 'package:remiksweb/core/widgets/remiks_customicon.dart';
 import 'package:remiksweb/core/widgets/remiks_icon.dart';
 import 'package:remiksweb/core/widgets/remiks_logo.dart';
+import 'package:remiksweb/core/widgets/remiks_text.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class RemiksFooter extends StatelessWidget {
@@ -74,34 +75,43 @@ class RemiksFooter extends StatelessWidget {
       height: 300,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                RemiksLogo(size: 150),
-                if (isMobileWeb(context)) PageSelector(),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    RemiksLogo(size: 150),
+                    if (isMobileWeb(context)) PageSelector(),
+                  ],
+                ),
+                if (!isMobileWeb(context)) PageSelector(),
+                isMobileWeb(context)
+                    ? SizedBox(
+                        width: 150,
+                        child: GridView.count(
+                          shrinkWrap: true,
+                          crossAxisCount: 2,
+                          mainAxisSpacing: 0,
+                          crossAxisSpacing: 0,
+                          children: _buildIconButtons(context),
+                        ),
+                      )
+                    : Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: _buildIconButtons(context),
+                      ),
               ],
             ),
-
-            if (!isMobileWeb(context)) PageSelector(),
-            isMobileWeb(context)
-                ? SizedBox(
-                    width: 150,
-                    child: GridView.count(
-                      shrinkWrap: true,
-                      crossAxisCount: 2,
-                      mainAxisSpacing: 0,
-                      crossAxisSpacing: 0,
-                      children: _buildIconButtons(context),
-                    ),
-                  )
-                : Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: _buildIconButtons(context),
-                  )
-            //TODO: add alrights reserved here
+            RemiksText(
+              text: '© 2025 Remiks FD. All rights reserved.',
+              fontSize: 20,
+              color: Colors.white,
+              font: 'Hey',
+            ),
           ],
         ),
       ),
