@@ -51,6 +51,7 @@ flutter:
     - web/favicon.ico
     - assets/fb_mobile.webp
     - assets/tiktok_shop.webp
+    - assets/lazada_shop.webp
 
   fonts:
     - family: Roboto

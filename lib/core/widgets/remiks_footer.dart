@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:remiksweb/core/utils.dart';
 import 'package:remiksweb/core/widgets/page_selector.dart';
+import 'package:remiksweb/core/widgets/remiks_customicon.dart';
 import 'package:remiksweb/core/widgets/remiks_icon.dart';
 import 'package:remiksweb/core/widgets/remiks_logo.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -83,17 +84,24 @@ class RemiksFooter extends StatelessWidget {
                 if (isMobileWeb(context)) PageSelector(),
               ],
             ),
-            //TODO: make it a grid
+
             if (!isMobileWeb(context)) PageSelector(),
             isMobileWeb(context)
-                ? Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: _buildIconButtons(context),
+                ? SizedBox(
+                    width: 150,
+                    child: GridView.count(
+                      shrinkWrap: true,
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 0,
+                      crossAxisSpacing: 0,
+                      children: _buildIconButtons(context),
+                    ),
                   )
                 : Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: _buildIconButtons(context),
                   )
+            //TODO: add alrights reserved here
           ],
         ),
       ),
@@ -122,50 +130,15 @@ class RemiksFooter extends StatelessWidget {
         onPressed: _launchEmail,
         icon: RemiksIcon(icon: Icons.email),
       ),
-      IconButton(
+      RemiksCustomIcon(
+        function: _launchShop,
+        image: 'assets/lazada_shop.webp',
         tooltip: 'Visit our Lazada Shop',
-        onPressed: _launchShop,
-        icon: RemiksIcon(icon: Icons.storefront_rounded),
       ),
-      SizedBox(
-        width: 45,
-        height: 45,
-        child: InkWell(
-          onTap: _launchTikTok,
-          child: Tooltip(
-            message: 'Visit our Tiktok Shop',
-            child: Stack(
-              children: [
-                Positioned(
-                  left: 2,
-                  top: 2,
-                  child: ColorFiltered(
-                    colorFilter: ColorFilter.mode(
-                      Colors.red[900]!,
-                      BlendMode.srcIn,
-                    ),
-                    child: Image.asset(
-                      'assets/tiktok_shop.webp',
-                      height: 45,
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                ),
-                ColorFiltered(
-                  colorFilter: ColorFilter.mode(
-                    Colors.red,
-                    BlendMode.srcIn,
-                  ),
-                  child: Image.asset(
-                    'assets/tiktok_shop.webp',
-                    height: 45,
-                    fit: BoxFit.contain,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
+      RemiksCustomIcon(
+        function: _launchTikTok,
+        image: 'assets/tiktok_shop.webp',
+        tooltip: 'Visit our TikTok',
       ),
     ];
   }
