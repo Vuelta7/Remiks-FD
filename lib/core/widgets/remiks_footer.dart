@@ -34,19 +34,28 @@ class RemiksFooter extends StatelessWidget {
     }
   }
 
-  // void _launchEmail() async {
-  //   final Uri params = Uri(
-  //     scheme: 'mailto',
-  //     path: 'remiksfd@gmail.com',
-  //     query: 'subject=Contact&body=Hello',
-  //   );
-  //   var url = params.toString();
-  //   if (await canLaunchUrl(Uri.parse(url))) {
-  //     await launchUrl(Uri.parse(url));
-  //   } else {
-  //     throw 'Could not launch $url';
-  //   }
-  // }
+  void _launchTikTok() async {
+    const url = 'https://vt.tiktok.com/ZSryp2FMb/?page=TikTokShop';
+    if (await canLaunchUrl(Uri.parse(url))) {
+      await launchUrl(Uri.parse(url));
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  void _launchEmail() async {
+    final Uri params = Uri(
+      scheme: 'mailto',
+      path: 'remiksfd@gmail.com',
+      query: 'subject=Contact&body=Hello',
+    );
+    var url = params.toString();
+    if (await canLaunchUrl(Uri.parse(url))) {
+      await launchUrl(Uri.parse(url));
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
 
   void _launchShop() async {
     const url =
@@ -74,6 +83,7 @@ class RemiksFooter extends StatelessWidget {
                 if (isMobileWeb(context)) PageSelector(),
               ],
             ),
+            //TODO: make it a grid
             if (!isMobileWeb(context)) PageSelector(),
             isMobileWeb(context)
                 ? Column(
@@ -108,9 +118,54 @@ class RemiksFooter extends StatelessWidget {
         icon: RemiksIcon(icon: Icons.location_on),
       ),
       IconButton(
-        tooltip: 'Visit our Shop',
+        tooltip: 'Email Us',
+        onPressed: _launchEmail,
+        icon: RemiksIcon(icon: Icons.email),
+      ),
+      IconButton(
+        tooltip: 'Visit our Lazada Shop',
         onPressed: _launchShop,
         icon: RemiksIcon(icon: Icons.storefront_rounded),
+      ),
+      SizedBox(
+        width: 45,
+        height: 45,
+        child: InkWell(
+          onTap: _launchTikTok,
+          child: Tooltip(
+            message: 'Visit our Tiktok Shop',
+            child: Stack(
+              children: [
+                Positioned(
+                  left: 2,
+                  top: 2,
+                  child: ColorFiltered(
+                    colorFilter: ColorFilter.mode(
+                      Colors.red[900]!,
+                      BlendMode.srcIn,
+                    ),
+                    child: Image.asset(
+                      'assets/tiktok_shop.webp',
+                      height: 45,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+                ColorFiltered(
+                  colorFilter: ColorFilter.mode(
+                    Colors.red,
+                    BlendMode.srcIn,
+                  ),
+                  child: Image.asset(
+                    'assets/tiktok_shop.webp',
+                    height: 45,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     ];
   }

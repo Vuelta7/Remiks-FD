@@ -50,6 +50,7 @@ flutter:
     - assets/banner.png
     - web/favicon.ico
     - assets/fb_mobile.webp
+    - assets/tiktok_shop.webp
 
   fonts:
     - family: Roboto

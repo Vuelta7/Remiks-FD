@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:remiksweb/core/utils.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+//TODO: Enhance the design of the product overview page
 class ProductOverview extends StatelessWidget {
   final Map<String, dynamic> product;
   final VoidCallback onClose;
