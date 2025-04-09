@@ -63,7 +63,7 @@ class ContactsPage extends StatelessWidget {
                   width: 200,
                 ),
               ),
-              RemiksFooter(), //TODO: add email instagram and more
+              RemiksFooter(),
             ],
           ),
         ),
