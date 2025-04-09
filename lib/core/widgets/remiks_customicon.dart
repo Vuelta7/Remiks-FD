@@ -4,13 +4,18 @@ class RemiksCustomIcon extends StatelessWidget {
   final VoidCallback function;
   final String image;
   final String? tooltip;
+  final EdgeInsets padding;
   const RemiksCustomIcon(
-      {super.key, required this.function, required this.image, this.tooltip});
+      {super.key,
+      required this.function,
+      required this.image,
+      this.tooltip,
+      required this.padding});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(21, 10, 0, 0),
+      padding: padding,
       child: SizedBox(
         width: 45,
         height: 45,

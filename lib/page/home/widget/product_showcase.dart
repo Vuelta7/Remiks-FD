@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:remiksweb/core/utils.dart';
 
 class ProductShowcase extends StatefulWidget {
   const ProductShowcase({super.key});
@@ -14,11 +15,12 @@ class _ProductShowcaseState extends State<ProductShowcase> {
   double _opacity = 1.0;
   final List<String> _images = [
     'assets/chili_shots.png',
-    'assets/ginisang_alamang.png',
+    'assets/ginisang_alamang.webp',
     'assets/sawsaw_suka.png',
-    'assets/chicken_pastil.png',
+    'assets/chicken_pastil.webp',
     'assets/hot_sauce.png',
-    'assets/chili_garlic.png',
+    'assets/chili_garlic.webp',
+    'assets/chicken_oil.webp'
   ];
 
   @override
@@ -53,8 +55,8 @@ class _ProductShowcaseState extends State<ProductShowcase> {
             child: Image.asset(
               _images[_currentIndex],
               fit: BoxFit.cover,
-              width: 200,
-              height: 500,
+              width: isMobileWeb(context) ? 300 : 400,
+              height: isMobileWeb(context) ? 400 : 600,
             ),
           ),
         ],

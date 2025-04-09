@@ -41,9 +41,9 @@ flutter:
     - assets/chili_shots.png
     - assets/sawsaw_suka.png
     - assets/hot_sauce.png
-    - assets/ginisang_alamang.png
-    - assets/chicken_pastil.png
-    - assets/chili_garlic.png
+    - assets/ginisang_alamang.webp
+    - assets/chicken_pastil.webp
+    - assets/chili_garlic.webp
     - assets/facebook.webp
     - assets/background_intro_raw.webp
     - assets/remiks_vision.webp
@@ -56,6 +56,10 @@ flutter:
     - assets/sagada.webp
     - assets/barako_trans.webp
     - assets/sagada_trans.webp
+    - assets/remiks_benefit.webp
+    - assets/chicken_oil.webp
+    - assets/chicharap.webp
+    - assets/turon.webp
 
   fonts:
     - family: Roboto

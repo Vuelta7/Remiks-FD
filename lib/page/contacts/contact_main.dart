@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:remiksweb/core/utils.dart';
 import 'package:remiksweb/core/widgets/navbar_button.dart';
 import 'package:remiksweb/core/widgets/remiks_footer.dart';
 import 'package:remiksweb/core/widgets/remiks_icon.dart';
 import 'package:remiksweb/core/widgets/remiks_navbar.dart';
 import 'package:remiksweb/core/widgets/remiks_text.dart';
-import 'package:remiksweb/page/contacts/widget/remiks._fb.dart';
+import 'package:remiksweb/page/contacts/widget/remiks_fb.dart';
 import 'package:remiksweb/page/contacts/widget/remiks_location.dart';
 
 class ContactsPage extends StatelessWidget {
@@ -40,6 +41,13 @@ class ContactsPage extends StatelessWidget {
                     text: 'Message us on our\nFacebook Page',
                     font: 'Bitshow',
                     color: Colors.white,
+                  ),
+                  GestureDetector(
+                    onTap: launchFacebook,
+                    child: MenuButton(
+                      text: 'Go to Facebook Page',
+                      width: 200,
+                    ),
                   ),
                 ],
               ),

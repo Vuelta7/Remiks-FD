@@ -19,11 +19,11 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
 
   final List<String> _products = [
     'assets/chili_shots.png',
-    'assets/ginisang_alamang.png',
+    'assets/ginisang_alamang.webp',
     'assets/sawsaw_suka.png',
-    'assets/chicken_pastil.png',
+    'assets/chicken_pastil.webp',
     'assets/hot_sauce.png',
-    'assets/chili_garlic.png',
+    'assets/chili_garlic.webp',
   ];
 
   @override

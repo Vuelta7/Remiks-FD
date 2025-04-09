@@ -13,8 +13,8 @@ class IntroSection extends ConsumerWidget {
   List<Widget> _buildIntroContent(BuildContext context, ref) {
     return [
       SizedBox(
-        width: 200,
-        height: isMobileWeb(context) ? 300 : 500,
+        width: 400,
+        height: isMobileWeb(context) ? 400 : 600,
         child: ProductShowcase(),
       ),
       if (!isMobileWeb(context)) SizedBox(width: 200),
