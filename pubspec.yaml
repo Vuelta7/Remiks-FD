@@ -60,6 +60,9 @@ flutter:
     - assets/chicken_oil.webp
     - assets/chicharap.webp
     - assets/turon.webp
+    - assets/remiks_brew.webp
+    - assets/barako_view.webp
+    - assets/sagada_view.webp
 
   fonts:
     - family: Roboto

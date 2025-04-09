@@ -7,6 +7,7 @@ import 'package:remiksweb/core/widgets/remiks_text.dart';
 import 'package:remiksweb/page/home/widget/home_header.dart';
 import 'package:remiksweb/page/home/widget/product_carousel.dart';
 import 'package:remiksweb/page/home/widget/remiks_about.dart';
+import 'package:remiksweb/page/home/widget/remiks_brew.dart';
 
 class HomePage extends ConsumerWidget {
   const HomePage({super.key});
@@ -31,6 +32,7 @@ class HomePage extends ConsumerWidget {
                 padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
                 child: Column(
                   children: [
+                    NewProductShowcase(),
                     RemiksText(
                       fontSize: 50,
                       text: 'OUR PRODUCTS',

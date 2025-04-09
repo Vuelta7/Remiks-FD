@@ -56,5 +56,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-// TODO: ADD coffee
 // flutter run -d web-server --web-hostname 0.0.0.0 --web-port 8080
