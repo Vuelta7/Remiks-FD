@@ -9,18 +9,5 @@
         { "key": "Cache-Control", "value": "no-store" }
       ]
     }
-  ],
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "www.remiksfd.store"
-        }
-      ],
-      "destination": "https://remiksfd.store/",
-      "statusCode": 301
-    }
   ]
 }
