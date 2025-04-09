@@ -42,14 +42,14 @@ class ContactsPage extends StatelessWidget {
                     font: 'Bitshow',
                     color: Colors.white,
                   ),
-                  GestureDetector(
-                    onTap: launchFacebook,
-                    child: MenuButton(
-                      text: 'Go to Facebook Page',
-                      width: 200,
-                    ),
-                  ),
                 ],
+              ),
+              GestureDetector(
+                onTap: launchFacebook,
+                child: MenuButton(
+                  text: 'Go to Facebook Page',
+                  width: 200,
+                ),
               ),
               SizedBox(height: 20),
               RemiksLocation(),

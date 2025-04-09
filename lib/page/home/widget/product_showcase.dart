@@ -55,8 +55,8 @@ class _ProductShowcaseState extends State<ProductShowcase> {
             child: Image.asset(
               _images[_currentIndex],
               fit: BoxFit.cover,
-              width: isMobileWeb(context) ? 300 : 400,
-              height: isMobileWeb(context) ? 400 : 600,
+              width: isMobileWeb(context) ? 200 : 300,
+              height: isMobileWeb(context) ? 300 : 500,
             ),
           ),
         ],

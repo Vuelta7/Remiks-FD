@@ -107,7 +107,7 @@ const List<Map<String, dynamic>> products = [
     'name': 'Turones',
     'description':
         'a sweet & savory snack with peanuts inside. perfect for coffee time & meryenda.',
-    'price': '₱70',
+    'price': '₱30 each\n3 for ₱100',
     'bgColor': Colors.orange,
     'link': null
   },
@@ -117,8 +117,8 @@ const List<Map<String, dynamic>> products = [
     'description':
         'A rich and aromatic coffee blend from the highlands of Sagada.',
     'longDescription':
-        'Sagada Pure Arabica Premium Beans is Medium Roast Elevate your daily brew with the rich heritage of Sagada. These 100% Pure Arabica beans are cultivated at high altitudes in the cool climate of the Mountain Province, where volcanic soil and mountain mists produce coffee of exceptional quality and flavor. Our medium roast brings out a harmonious balance of smooth body and vibrant acidity, with tasting notes of chocolate, caramel, and a hint of citrus. Handpicked and carefully processed by local farmers, this coffee reflects the soulful tradition and craftsmanship of the Cordilleras. Perfect for pour-over, drip, or French press, each cup offers a warm, comforting taste of the mountains—bold, aromatic, and unmistakably Filipino.\nFlavor Notes: Chocolate · Caramel · Citrus \nRoast Level: Medium \nOrigin: Sagada, Mountain Province, Philippines \nProcess: Handpicked · Washed · Sun-dried',
-    'price': '₱70',
+        'Sagada Pure Arabica Premium Beans is Medium Roast\nElevate your daily brew with the rich heritage of Sagada. These 100% Pure Arabica beans are cultivated at high altitudes in the cool climate of the Mountain Province, where volcanic soil and mountain mists produce coffee of exceptional quality and flavor.\n\nOur medium roast brings out a harmonious balance of smooth body and vibrant acidity, with tasting notes of chocolate, caramel, and a hint of citrus. Handpicked and carefully processed by local farmers, this coffee reflects the soulful tradition and craftsmanship of the Cordilleras.\n\nPerfect for pour-over, drip, or French press, each cup offers a warm, comforting taste of the mountains—bold, aromatic, and unmistakably Filipino.\n\nFlavor Notes: Chocolate · Caramel · Citrus \nRoast Level: Medium \nOrigin: Sagada, Mountain Province, Philippines \nProcess: Handpicked · Washed · Sun-dried',
+    'price': '(10s) - ₱195\n10s individual pack\n-₱220\nper pc - ₱25',
     'bgColor': Colors.orange,
     'link': null
   },
@@ -128,8 +128,8 @@ const List<Map<String, dynamic>> products = [
     'description':
         'A strong and bold coffee blend from Batangas and Cavite, perfect for coffee lovers.',
     'longDescription':
-        'Barako Pure Liberica is Dark Roast Unmistakably bold. Unapologetically Filipino. Barako is more than just coffee—it\'s a legacy. Grown in the volcanic soils of Batangas and Cavite, these 100% Pure Liberica beans are known for their intense aroma, full body, and robust flavor. Our dark roast enhances its signature kick, with deep notes of molasses, dark cocoa, and a hint of spice, perfect for those who crave a powerful, no-nonsense brew. Handpicked and traditionally processed, Barako is the heart and soul of Philippine coffee culture—strong, earthy, and deeply rooted in history.\nFlavor Notes: Molasses · Dark Cocoa · Earthy Spice\nRoast Level: Dark\nOrigin: Batangas & Cavite, Philippines\nProcess: Handpicked · Washed · Sun-dried',
-    'price': '₱70',
+        'Barako Pure Liberica is Dark Roast\nUnmistakably bold. Unapologetically Filipino.\n\nBarako is more than just coffee—it\'s a legacy. Grown in the volcanic soils of Batangas and Cavite, these 100% Pure Liberica beans are known for their intense aroma, full body, and robust flavor. Our dark roast enhances its signature kick, with deep notes of molasses, dark cocoa, and a hint of spice, perfect for those who crave a powerful, no-nonsense brew.\n\nHandpicked and traditionally processed, Barako is the heart and soul of Philippine coffee culture—strong, earthy, and deeply rooted in history.\n\nFlavor Notes: Molasses · Dark Cocoa · Earthy Spice\nRoast Level: Dark\nOrigin: Batangas & Cavite, Philippines\nProcess: Handpicked · Washed · Sun-dried',
+    'price': '(10s) - ₱190\n10s individual pack\n-₱220\nper pc - ₱25',
     'bgColor': Colors.orange,
     'link': null
   },
