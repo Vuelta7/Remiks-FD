@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:remiksweb/core/utils.dart';
 import 'package:remiksweb/core/widgets/remiks_footer.dart';
+import 'package:remiksweb/core/widgets/remiks_image.dart';
 import 'package:remiksweb/core/widgets/remiks_text.dart';
 import 'package:remiksweb/page/home/widget/home_header.dart';
 import 'package:remiksweb/page/home/widget/product_carousel.dart';
@@ -32,7 +33,20 @@ class HomePage extends ConsumerWidget {
                 padding: const EdgeInsets.fromLTRB(0, 20, 0, 20),
                 child: Column(
                   children: [
-                    NewProductShowcase(),
+                    RemiksBrewShowcase(),
+                    SizedBox(height: 30),
+                    RemiksText(
+                      fontSize: 50,
+                      text: 'Did you know?',
+                      font: 'Bitshow',
+                      color: Colors.white,
+                    ),
+                    SizedBox(height: 30),
+                    RemiksImage(
+                      image: 'assets/remiks_benefit.webp',
+                      height: 500,
+                    ),
+                    SizedBox(height: 30),
                     RemiksText(
                       fontSize: 50,
                       text: 'OUR PRODUCTS',

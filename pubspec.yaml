@@ -63,6 +63,7 @@ flutter:
     - assets/remiks_brew.webp
     - assets/barako_view.webp
     - assets/sagada_view.webp
+    - assets/coffee_pattern.webp
 
   fonts:
     - family: Roboto

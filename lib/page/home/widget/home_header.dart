@@ -14,7 +14,7 @@ class IntroSection extends ConsumerWidget {
     return [
       SizedBox(
         width: 400,
-        height: isMobileWeb(context) ? 400 : 600,
+        height: isMobileWeb(context) ? 300 : 600,
         child: ProductShowcase(),
       ),
       if (!isMobileWeb(context)) SizedBox(width: 200),

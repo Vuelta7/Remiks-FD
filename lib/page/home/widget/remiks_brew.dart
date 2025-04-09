@@ -5,36 +5,20 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class NewProductShowcase extends StatefulWidget {
-  const NewProductShowcase({super.key});
+class RemiksBrewShowcase extends StatefulWidget {
+  const RemiksBrewShowcase({super.key});
 
   @override
-  State<NewProductShowcase> createState() => _NewProductShowcaseState();
+  State<RemiksBrewShowcase> createState() => _RemiksBrewShowcaseState();
 }
 
-class _NewProductShowcaseState extends State<NewProductShowcase> {
+class _RemiksBrewShowcaseState extends State<RemiksBrewShowcase> {
   final CarouselSliderController _carouselController =
       CarouselSliderController();
 
   final List<Map<String, dynamic>> _products = [
     {
       'image': 'assets/barako_view.webp',
-      'name': 'Barako',
-      'description':
-          'A strong and bold coffee blend from Batangas and Cavite, perfect for coffee lovers.',
-      'price': '₱190',
-      'tag': 'Dark Roast',
-    },
-    {
-      'image': 'assets/sagada_trans.webp',
-      'name': 'Sagada',
-      'description':
-          'A rich and aromatic coffee blend from the highlands of Sagada.',
-      'price': '₱195',
-      'tag': 'Medium Roast',
-    },
-    {
-      'image': 'assets/barako.webp',
       'name': 'Barako',
       'description':
           'A strong and bold coffee blend from Batangas and Cavite, perfect for coffee lovers.',
@@ -50,7 +34,7 @@ class _NewProductShowcaseState extends State<NewProductShowcase> {
       'tag': 'Medium Roast',
     },
     {
-      'image': 'assets/barako_trans.webp',
+      'image': 'assets/barako.webp',
       'name': 'Barako',
       'description':
           'A strong and bold coffee blend from Batangas and Cavite, perfect for coffee lovers.',
@@ -74,7 +58,7 @@ class _NewProductShowcaseState extends State<NewProductShowcase> {
       decoration: BoxDecoration(
         color: const Color(0xFFF5F3EF),
         image: DecorationImage(
-          image: const AssetImage('assets/images/coffee_pattern.png'),
+          image: const AssetImage('assets/coffee_pattern.webp'),
           opacity: 0.05,
           fit: BoxFit.cover,
         ),
@@ -115,7 +99,7 @@ class _NewProductShowcaseState extends State<NewProductShowcase> {
           CarouselSlider(
             carouselController: _carouselController,
             options: CarouselOptions(
-              height: 600,
+              height: 620,
               viewportFraction: _isSmallScreen(context) ? 0.8 : 0.5,
               enlargeCenterPage: true,
               enableInfiniteScroll: true,
@@ -137,6 +121,7 @@ class _NewProductShowcaseState extends State<NewProductShowcase> {
 
   Widget _buildProductCard(BuildContext context, Map<String, dynamic> product) {
     return SingleChildScrollView(
+      physics: const NeverScrollableScrollPhysics(),
       child: Container(
         width: MediaQuery.of(context).size.width *
             (_isSmallScreen(context) ? 0.7 : 0.45),

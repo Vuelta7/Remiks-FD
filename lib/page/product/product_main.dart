@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:remiksweb/core/utils.dart';
 import 'package:remiksweb/core/widgets/remiks_footer.dart';
-import 'package:remiksweb/core/widgets/remiks_image.dart';
 import 'package:remiksweb/core/widgets/remiks_navbar.dart';
 import 'package:remiksweb/core/widgets/remiks_text.dart';
 import 'package:remiksweb/page/product/widget/product_grid.dart';
@@ -65,10 +64,6 @@ class _ProductPageState extends State<ProductPage> {
                 text: 'Sarap up to the last drop!',
                 font: 'Bitshow',
                 color: Colors.white,
-              ),
-              RemiksImage(
-                image: 'assets/remiks_benefit.webp',
-                height: 600,
               ),
               const RemiksFooter(),
             ],
