@@ -1,33 +1,5 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:geolocator/geolocator.dart';
-import 'package:latlong2/latlong.dart';
-import 'package:url_launcher/url_launcher.dart';
 
-bool isMobileWeb(BuildContext context) {
-  return kIsWeb && MediaQuery.of(context).size.width < 1000;
-}
-
-Color getShade(Color color, int shade) {
-  assert(shade >= 100 && shade <= 900 && shade % 100 == 0);
-  final int r = color.red;
-  final int g = color.green;
-  final int b = color.blue;
-  final double factor = (shade / 1000).clamp(0.0, 1.0);
-  return Color.fromRGBO(
-    (r * factor).toInt(),
-    (g * factor).toInt(),
-    (b * factor).toInt(),
-    1,
-  );
-}
-
-Color themeColor = const Color.fromARGB(255, 238, 32, 35);
-
-final selectedPage = StateProvider<int>((ref) => 0);
-
-//fix the pricing and description
 const List<Map<String, dynamic>> products = [
   {
     'image': 'assets/chicken_pastil.webp',
@@ -140,65 +112,3 @@ const List<Map<String, dynamic>> products = [
     'link': null
   },
 ];
-
-final locationProvider = FutureProvider<LatLng?>((ref) async {
-  LocationPermission permission = await Geolocator.requestPermission();
-  if (permission == LocationPermission.denied ||
-      permission == LocationPermission.deniedForever) {
-    return null;
-  }
-
-  Position position = await Geolocator.getCurrentPosition();
-  return LatLng(position.latitude, position.longitude);
-});
-
-void launchFacebook() async {
-  const url = 'https://www.facebook.com/remiksfd/';
-  if (await canLaunchUrl(Uri.parse(url))) {
-    await launchUrl(Uri.parse(url));
-  } else {
-    throw 'Could not launch $url';
-  }
-}
-
-void launchMaps() async {
-  const url = 'https://maps.app.goo.gl/c7HGE6Z1Ty1LGuz46';
-  if (await canLaunchUrl(Uri.parse(url))) {
-    await launchUrl(Uri.parse(url));
-  } else {
-    throw 'Could not launch $url';
-  }
-}
-
-void launchTikTok() async {
-  const url = 'https://vt.tiktok.com/ZSryp2FMb/?page=TikTokShop';
-  if (await canLaunchUrl(Uri.parse(url))) {
-    await launchUrl(Uri.parse(url));
-  } else {
-    throw 'Could not launch $url';
-  }
-}
-
-void launchEmail() async {
-  final Uri params = Uri(
-    scheme: 'mailto',
-    path: 'remiksfd@gmail.com',
-    query: 'subject=Contact&body=Hello',
-  );
-  var url = params.toString();
-  if (await canLaunchUrl(Uri.parse(url))) {
-    await launchUrl(Uri.parse(url));
-  } else {
-    throw 'Could not launch $url';
-  }
-}
-
-void launchShop() async {
-  const url =
-      'https://www.lazada.com.ph/remiks-fd-food-trading/?q=All-Products&from=wangpu&langFlag=en&pageTypeId=2';
-  if (await canLaunchUrl(Uri.parse(url))) {
-    await launchUrl(Uri.parse(url));
-  } else {
-    throw 'Could not launch $url';
-  }
-}

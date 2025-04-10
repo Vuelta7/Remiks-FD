@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:remiksweb/core/utils.dart';
+import 'package:remiksweb/core/utils/products.dart';
+import 'package:remiksweb/core/utils/utils.dart';
 import 'package:remiksweb/core/widgets/remiks_text.dart';
 
 class ProductCarousel extends StatefulWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:remiksweb/core/utils.dart';
+import 'package:remiksweb/core/utils/utils.dart';
 import 'package:remiksweb/page/contacts/widget/location_map.dart';
 
 class RemiksLocation extends StatelessWidget {

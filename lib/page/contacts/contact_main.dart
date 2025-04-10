@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:remiksweb/core/utils.dart';
+import 'package:remiksweb/core/utils/launchers.dart';
 import 'package:remiksweb/core/widgets/navbar_button.dart';
 import 'package:remiksweb/core/widgets/remiks_footer.dart';
 import 'package:remiksweb/core/widgets/remiks_icon.dart';
@@ -63,6 +63,8 @@ class ContactsPage extends StatelessWidget {
                   width: 200,
                 ),
               ),
+              //TODO add instagram
+              //TODO add email
               RemiksFooter(),
             ],
           ),

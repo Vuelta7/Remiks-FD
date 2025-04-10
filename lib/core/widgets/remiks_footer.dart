@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:remiksweb/core/utils.dart';
+import 'package:remiksweb/core/utils/launchers.dart';
+import 'package:remiksweb/core/utils/utils.dart';
 import 'package:remiksweb/core/widgets/page_selector.dart';
 import 'package:remiksweb/core/widgets/remiks_customicon.dart';
 import 'package:remiksweb/core/widgets/remiks_icon.dart';
@@ -103,3 +104,4 @@ class RemiksFooter extends StatelessWidget {
     ];
   }
 }
+//TODO add ismobile in lazada and tiktok button

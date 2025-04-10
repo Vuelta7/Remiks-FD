@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:remiksweb/core/utils.dart';
+import 'package:remiksweb/core/utils/utils.dart';
 
 class ProductShowcase extends StatefulWidget {
   const ProductShowcase({super.key});

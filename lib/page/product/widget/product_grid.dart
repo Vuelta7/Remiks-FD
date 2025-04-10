@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:remiksweb/core/utils.dart';
+import 'package:remiksweb/core/utils/products.dart';
+import 'package:remiksweb/core/utils/utils.dart';
 import 'package:remiksweb/core/widgets/remiks_text.dart';
 
 class ProductGrid extends StatefulWidget {

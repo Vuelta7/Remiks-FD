@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:remiksweb/core/utils.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -113,7 +112,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
                             Icon(
                               Icons.hexagon_rounded,
                               size: 100,
-                              color: themeColor,
+                              color: Colors.red,
                             ),
                             Image.asset(
                               product,
