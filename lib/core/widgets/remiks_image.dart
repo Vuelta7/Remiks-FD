@@ -3,16 +3,19 @@ import 'package:flutter/material.dart';
 class RemiksImage extends StatelessWidget {
   final String image;
   final double height;
+  final double? width;
   const RemiksImage({
     super.key,
     required this.image,
     required this.height,
+    this.width,
   });
 
   @override
   Widget build(BuildContext context) {
+    final double calculatedWidth = width ?? height * 0.62;
     return SizedBox(
-      width: height * 0.62,
+      width: calculatedWidth,
       height: height + 10,
       child: Stack(
         children: [

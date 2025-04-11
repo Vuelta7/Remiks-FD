@@ -43,7 +43,7 @@ class _ProductCarouselState extends State<ProductCarousel> {
         return Container(
           width: 600,
           decoration: BoxDecoration(
-            color: isCentered ? Colors.white : Colors.orange,
+            color: isCentered ? Colors.red : Colors.orange,
             borderRadius: BorderRadius.circular(25),
             boxShadow: [
               BoxShadow(
@@ -68,14 +68,14 @@ class _ProductCarouselState extends State<ProductCarousel> {
                     fontSize: isMobileWeb(context) ? 25 : 30,
                     text: products[index]['name'],
                     font: 'Soft',
-                    color: Colors.red,
+                    color: Colors.white,
                   ),
                   SizedBox(height: 10),
                   RemiksText(
                     fontSize: isMobileWeb(context) ? 15 : 20,
                     text: products[index]['description'],
                     font: 'Hey',
-                    color: Colors.red,
+                    color: Colors.white,
                     offset: Offset(1, 1),
                   ),
                   SizedBox(height: 10),
@@ -83,7 +83,7 @@ class _ProductCarouselState extends State<ProductCarousel> {
                     fontSize: 30,
                     text: products[index]['price'],
                     font: 'Soft',
-                    color: Colors.red,
+                    color: Colors.white,
                   ),
                 ],
               ),

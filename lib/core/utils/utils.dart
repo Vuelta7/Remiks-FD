@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 bool isMobileWeb(BuildContext context) {
-  return kIsWeb && MediaQuery.of(context).size.width < 1000;
+  return kIsWeb && MediaQuery.of(context).size.width < 1200;
 }
 
 Color getShade(Color color, int shade) {

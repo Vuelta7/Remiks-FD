@@ -33,11 +33,15 @@ class RemiksFooter extends StatelessWidget {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    RemiksLogo(size: 150),
+                    Row(
+                      children: [
+                        RemiksLogo(size: 150),
+                        if (!isMobileWeb(context)) PageSelector(),
+                      ],
+                    ),
                     if (isMobileWeb(context)) PageSelector(),
                   ],
                 ),
-                if (!isMobileWeb(context)) PageSelector(),
                 isMobileWeb(context)
                     ? SizedBox(
                         width: 150,
@@ -93,15 +97,18 @@ class RemiksFooter extends StatelessWidget {
         function: launchShop,
         image: 'assets/lazada_shop.webp',
         tooltip: 'Visit our Lazada Shop',
-        padding: const EdgeInsets.fromLTRB(19, 16, 0, 0),
+        padding: isMobileWeb(context)
+            ? EdgeInsets.fromLTRB(19, 16, 0, 0)
+            : EdgeInsets.fromLTRB(19, 8, 0, 0),
       ),
       RemiksCustomIcon(
         function: launchTikTok,
         image: 'assets/tiktok_shop.webp',
         tooltip: 'Visit our TikTok',
-        padding: const EdgeInsets.fromLTRB(19, 14, 0, 0),
+        padding: isMobileWeb(context)
+            ? EdgeInsets.fromLTRB(19, 14, 0, 0)
+            : EdgeInsets.fromLTRB(19, 6, 0, 0),
       ),
     ];
   }
 }
-//TODO add ismobile in lazada and tiktok button

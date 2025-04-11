@@ -13,6 +13,7 @@ class ProductShowcase extends StatefulWidget {
 class _ProductShowcaseState extends State<ProductShowcase> {
   int _currentIndex = 0;
   double _opacity = 1.0;
+  Timer? _timer; // Add a Timer reference
   final List<String> _images = [
     'assets/chili_shots.png',
     'assets/ginisang_alamang.webp',
@@ -29,13 +30,21 @@ class _ProductShowcaseState extends State<ProductShowcase> {
     _startFadeTransition();
   }
 
+  @override
+  void dispose() {
+    _timer?.cancel(); // Cancel the timer when the widget is disposed
+    super.dispose();
+  }
+
   void _startFadeTransition() {
-    Timer.periodic(const Duration(seconds: 4), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 4), (timer) {
+      if (!mounted) return; // Check if the widget is still mounted
       setState(() {
         _opacity = 0.0;
       });
 
       Future.delayed(const Duration(seconds: 1), () {
+        if (!mounted) return; // Check again before calling setState
         setState(() {
           _currentIndex = (_currentIndex + 1) % _images.length;
           _opacity = 1.0;

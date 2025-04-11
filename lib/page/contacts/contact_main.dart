@@ -4,6 +4,7 @@ import 'package:remiksweb/core/utils/launchers.dart';
 import 'package:remiksweb/core/widgets/navbar_button.dart';
 import 'package:remiksweb/core/widgets/remiks_footer.dart';
 import 'package:remiksweb/core/widgets/remiks_icon.dart';
+import 'package:remiksweb/core/widgets/remiks_image.dart';
 import 'package:remiksweb/core/widgets/remiks_navbar.dart';
 import 'package:remiksweb/core/widgets/remiks_text.dart';
 import 'package:remiksweb/page/contacts/widget/remiks_fb.dart';
@@ -52,6 +53,47 @@ class ContactsPage extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 20),
+              RemiksImage(
+                image: 'assets/remiks_ig.webp',
+                height: 235,
+                width: 340,
+              ),
+              SizedBox(height: 20),
+              RemiksText(
+                fontSize: 20,
+                text: 'Follow us on our\nInstagram Page',
+                font: 'Bitshow',
+                color: Colors.white,
+              ),
+              GestureDetector(
+                onTap: launchInstagram,
+                child: MenuButton(
+                  text: 'Go to Instagram Page',
+                  width: 200,
+                ),
+              ),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  RemiksIcon(icon: Icons.email),
+                  SizedBox(width: 10),
+                  RemiksText(
+                    fontSize: 20,
+                    text: 'Email Us in\nremiksfd@gmail.com',
+                    font: 'Bitshow',
+                    color: Colors.white,
+                  ),
+                ],
+              ),
+              GestureDetector(
+                onTap: launchEmail,
+                child: MenuButton(
+                  text: 'Email Us',
+                  width: 200,
+                ),
+              ),
+              SizedBox(height: 20),
               RemiksLocation(),
               SizedBox(height: 20),
               GestureDetector(
@@ -63,8 +105,7 @@ class ContactsPage extends StatelessWidget {
                   width: 200,
                 ),
               ),
-              //TODO add instagram
-              //TODO add email
+              SizedBox(height: 20),
               RemiksFooter(),
             ],
           ),

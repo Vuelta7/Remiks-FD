@@ -291,31 +291,33 @@ class ProductOverview extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 4),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        product['price'],
-                        style: GoogleFonts.poppins(
-                          fontSize: 28,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.red[900],
-                        ),
-                      ),
-                      if (product['originalPrice'] != null) ...[
-                        const SizedBox(width: 8),
-                        Text(
-                          product['originalPrice'],
-                          style: GoogleFonts.poppins(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.grey[500],
-                            decoration: TextDecoration.lineThrough,
-                          ),
-                        ),
-                      ],
-                    ],
+                  Text(
+                    product['price'],
+                    style: GoogleFonts.poppins(
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.red[900],
+                    ),
                   ),
+                  Text(
+                    'Promo/Bundle Price',
+                    style: GoogleFonts.poppins(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.grey[700],
+                    ),
+                  ),
+                  if (product['longPrice'] != null) ...[
+                    const SizedBox(height: 8),
+                    Text(
+                      product['longPrice'],
+                      style: GoogleFonts.poppins(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.red[900],
+                      ),
+                    ),
+                  ],
                 ],
               ),
             ),
@@ -359,34 +361,6 @@ class ProductOverview extends StatelessWidget {
               ),
           ],
         ),
-
-        // Additional info section
-        if (product['additionalInfo'] != null) ...[
-          const SizedBox(height: 24),
-          Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: Colors.red[50],
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: Colors.red[100]!),
-            ),
-            child: Row(
-              children: [
-                Icon(Icons.info_outline, color: Colors.red[900]),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Text(
-                    product['additionalInfo'],
-                    style: GoogleFonts.poppins(
-                      fontSize: 13,
-                      color: Colors.red[900],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
       ],
     );
   }

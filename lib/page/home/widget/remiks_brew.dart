@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class RemiksBrewShowcase extends StatefulWidget {
@@ -55,6 +54,7 @@ class _RemiksBrewShowcaseState extends State<RemiksBrewShowcase> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 40),
+      height: MediaQuery.of(context).size.height,
       decoration: BoxDecoration(
         color: const Color(0xFFF5F3EF),
         image: DecorationImage(
@@ -74,7 +74,6 @@ class _RemiksBrewShowcaseState extends State<RemiksBrewShowcase> {
                   'assets/remiks_brew.webp',
                   height: 100,
                 ),
-                const SizedBox(width: 20),
                 Text(
                   'Discover Remiks Brew',
                   style: GoogleFonts.poppins(
@@ -83,16 +82,6 @@ class _RemiksBrewShowcaseState extends State<RemiksBrewShowcase> {
                     color: Colors.brown[900],
                   ),
                 ),
-                const SizedBox(height: 8),
-                Text(
-                  'Handcrafted coffee for connoisseurs',
-                  textAlign: TextAlign.center,
-                  style: GoogleFonts.poppins(
-                    fontSize: 16,
-                    color: Colors.brown[700],
-                    height: 1.5,
-                  ),
-                )
               ],
             ),
           ),
@@ -136,8 +125,8 @@ class _RemiksBrewShowcaseState extends State<RemiksBrewShowcase> {
                 borderRadius: BorderRadius.circular(24),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.brown.withOpacity(0.1),
-                    blurRadius: 20,
+                    color: const Color.fromARGB(86, 121, 85, 72),
+                    blurRadius: 6,
                     offset: const Offset(0, 10),
                   ),
                 ],
@@ -158,8 +147,8 @@ class _RemiksBrewShowcaseState extends State<RemiksBrewShowcase> {
                             decoration: BoxDecoration(
                               gradient: RadialGradient(
                                 colors: [
-                                  Colors.brown.withOpacity(0.1),
-                                  Colors.brown.withOpacity(0),
+                                  Colors.brown,
+                                  Colors.brown,
                                 ],
                                 radius: 0.7,
                               ),
@@ -181,26 +170,6 @@ class _RemiksBrewShowcaseState extends State<RemiksBrewShowcase> {
                                 fit: BoxFit.contain,
                               );
                             },
-                          ),
-                        ),
-                        Positioned(
-                          top: 0,
-                          right: 0,
-                          child: Container(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 10, vertical: 5),
-                            decoration: BoxDecoration(
-                              color: Colors.red[900],
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                            child: Text(
-                              'NEW',
-                              style: GoogleFonts.poppins(
-                                color: Colors.white,
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
                           ),
                         ),
                       ],
@@ -252,7 +221,7 @@ class _RemiksBrewShowcaseState extends State<RemiksBrewShowcase> {
                   const SizedBox(height: 20),
 
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -273,26 +242,6 @@ class _RemiksBrewShowcaseState extends State<RemiksBrewShowcase> {
                             ),
                           ),
                         ],
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          context.go('/products');
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.brown[900],
-                          foregroundColor: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 20, vertical: 12),
-                        ),
-                        child: Text(
-                          'View Details',
-                          style: GoogleFonts.poppins(
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
                       ),
                     ],
                   ),
