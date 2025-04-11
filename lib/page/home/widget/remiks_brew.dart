@@ -54,7 +54,6 @@ class _RemiksBrewShowcaseState extends State<RemiksBrewShowcase> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 40),
-      height: MediaQuery.of(context).size.height,
       decoration: BoxDecoration(
         color: const Color(0xFFF5F3EF),
         image: DecorationImage(
@@ -76,6 +75,7 @@ class _RemiksBrewShowcaseState extends State<RemiksBrewShowcase> {
                 ),
                 Text(
                   'Discover Remiks Brew',
+                  textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
